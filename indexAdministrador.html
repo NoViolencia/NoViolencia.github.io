@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Administrador</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center" id="a-tituloRol">
+        <span class="d-none d-lg-block" id="span-tituloRol">Rol</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="span-correoUsuario">nomUsuario</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="h6-correoUsuario">nomUsuario</h6>
+              <span id="span-rolUsuario">rol</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html" id="a-cerrar_sesion">
+                <i class="bi bi-person"></i>
+                <span>Mi Perfil</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" id="cerrar_sesion">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Cerrar Sesión</span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav">
+      <li class="nav-item" id="li-usuarios">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav" id="a-usuarios">
+          <i class="bi bi-menu-button-wide"></i> Usuarios
+        </a>
+      </li>
+      <li class="nav-item" id="li-permisos">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Permisos
+        </a>
+      </li>
+      <li class="nav-item" id="li-recursos">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Recursos
+        </a>
+      </li>
+      <li class="nav-item" id="li-ayuda">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Ayuda
+        </a>
+      </li>
+      <li class="nav-item" id="li-denuncias">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Denuncias
+        </a>
+      </li>
+      <li class="nav-item" id="li-reportados">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Reportados
+        </a>
+      </li>
+      <li class="nav-item" id="li-aprende">
+        <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
+          <i class="bi bi-menu-button-wide"></i> Aprende
+        </a>
+      </li>
+
+    </ul>
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+
+    <section class="section dashboard" id="section-principal">
+      <div class="pagetitle">
+        <h1 id="h1-bienvenido"></h1>
+      </div>
+    </section>
+
+    <section class="section dashboard" id="section-usuarios" style="display: none;">
+      <div class="pagetitle">
+        <h1>Lista de Usuarios</h1>
+      </div>
+      <table id="tabla-usuarios" class="table table-striped">
+        <thead class="table-success">
+          <tr>
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Direccion</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Genero</th>
+            <th>NombreUsuario</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertarán las filas de usuarios -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section dashboard" id="section-permisos" style="display: none;">
+      <div class="pagetitle">
+        <h1>Permisos a Usuario</h1>
+      </div>
+      <table id="tabla-permisos" class="table table-striped">
+        <thead class="table-success">
+          <tr>
+            <th>ID Usuario</th>
+            <th>Nombre_Usuario</th>
+            <th>Rol</th>
+
+            <th><button type="button" class="btn btn-link">
+                <i class="bi bi-pencil-square"></i>
+              </button></th>
+            <th>
+              <button type="button" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-pencil-square" viewBox="0 0 16 16">
+                  <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z">
+                  </path>
+                  <path fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z">
+                  </path>
+                </svg>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertarán las filas de usuarios -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section dashboard" id="section-recursos" style="display: none;">
+      <div class="pagetitle">
+        <h1>Control de Noticias</h1>
+      </div>
+      <section class="section dashboard">
+        <div class="container-xxl py-6">
+          <div class="container">
+
+            <div class="row justify-content-center">
+              <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        <label for="name">Your Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        <label for="email">Your Email</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                        <label for="subject">Subject</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a message here" id="message"
+                          style="height: 150px"></textarea>
+                        <label for="message">Message</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Start -->
+      <section class="section dashboard">
+        <div class="d-flex justify-content-end mt-3">
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+
+        <table id="tabla-usuarios" class="table table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>ID Noticia</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+              <th>Fecha</th>
+              <th>Accion</th>
+              <th>Visible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se insertarán las filas de usuarios -->
+          </tbody>
+        </table>
+
+      </section>
+
+    </section>
+
+    <section class="section dashboard" id="section-ayuda" style="display: none;">
+      <div class="pagetitle">
+        <h1>Instituciones de Ayuda</h1>
+      </div>
+    </section>
+
+    <section class="section dashboard" id="section-denuncias" style="display: none;">
+      <div class="pagetitle">
+        <h1>Lista de Denuncias</h1>
+      </div>
+    </section>
+
+    <section class="section dashboard" id="section-reportados" style="display: none;">
+      <div class="pagetitle">
+        <h1>Lista de Reportados</h1>
+      </div>
+    </section>
+
+    <section class="section dashboard" id="section-aprende" style="display: none;">
+      <div class="pagetitle">
+        <h1>Aprende</h1>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NoMasViolencia</span></strong>. Todos los derechos reservados
+    </div>
+    <div class="credits">
+      Designed by <a href="indexAdministrador.html">INF-281</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="js/scriptAdministrador.js"></script>
+
+
+</body>
+
+</html>
