@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Realiza una solicitud POST al backend
-    fetch("http://127.0.0.1:3000/api/auth/login", {
+    fetch("https://prueba3-281-production.up.railway.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

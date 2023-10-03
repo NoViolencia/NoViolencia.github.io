@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
   
       // Realiza una solicitud POST al backend
-      fetch("http://127.0.0.1:3000/api/denuncia", {
+      fetch("https://prueba3-281-production.up.railway.app/api/denuncia", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const valNombreContacto = /^[a-zA-Z\s]{3,30}$/;
   const valNumeroContacto = /^(6\d{7}|7\d{7}|2\d{6})$/;
 
-  fetch(`http://127.0.0.1:3000/api/contacto/usuario/${id_usuario}`)
+  fetch(`https://prueba3-281-production.up.railway.app/api/contacto/usuario/${id_usuario}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Error al obtener los contactos');
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
               telefono: numeroContactoE,
               // id_usuario: id_usuario;
             };
-            fetch(`http://127.0.0.1:3000/api/contacto/${idContacto}/usuario/${id_usuario}`, {
+            fetch(`https://prueba3-281-production.up.railway.app/api/contacto/${idContacto}/usuario/${id_usuario}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const btnSIeliminar = document.getElementById("btn-SIeliminarContacto");
           btnSIeliminar.addEventListener('click', () => {
-            fetch(`http://127.0.0.1:3000/api/contacto/${idContacto}/usuario/${id_usuario}`, {
+            fetch(`https://prueba3-281-production.up.railway.app/api/contacto/${idContacto}/usuario/${id_usuario}`, {
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json",
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // id_usuario: id_usuario;
     };
 
-    fetch("http://127.0.0.1:3000/api/contacto", {
+    fetch("https://prueba3-281-production.up.railway.app/api/contacto", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

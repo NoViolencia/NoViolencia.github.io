@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const tablaUsuarios = document.getElementById('tabla-usuarios');
     // Realiza una solicitud GET al endpoint del backend que devuelve los usuarios en formato JSON
-    fetch('http://127.0.0.1:3000/api/usuario')
+    fetch('https://prueba3-281-production.up.railway.app/api/usuario')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al obtener los usuarios');
