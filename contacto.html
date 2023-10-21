@@ -49,7 +49,23 @@
     <div class="container-xxl position-relative p-0">
       <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-          <h1 class="m-0" id="h1-nomasviolencia">NoMasViolencia</h1>
+          <h1 class="m-0 d-flex align-items-center" id="h1-nomasviolencia">
+            <!-- NOMASVIOLENCIA -->
+            <span style="text-shadow: 2px 2px 4px #2296D5;">NO</span>
+            <span class="font-weight-bold" style="
+                text-shadow: 2px 2px 4px #ffcc00;
+                display: inline-block; 
+                white-space: nowrap; 
+                transform: rotate(0deg);
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                line-height: 1em;
+                font-size: 14px;
+                color: #F70337;
+                ">MAS</span>
+            <span style="text-shadow: 2px 2px 4px #2296D5;">VIOLENCIA</span>
+            <!-- <img src="img/nomasviolencia.jpeg" alt="Logo" style="width: 300px; height: 500px;"> -->
+          </h1>
           <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,20 +74,12 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
             <a href="index.html" class="nav-item nav-link active" id="a-inicio">Inicio</a>
-            <a href="index.html" class="nav-item nav-link" id="a-aprende">Aprende</a>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="a-recurso">Recursos</a>
-              <div class="dropdown-menu m-0">
-                <a href="index.html" class="dropdown-item" id="a-noticia">Noticias</a>
-                <a href="index.html" class="dropdown-item" id="a-evento">Eventos</a>
-                <a href="index.html" class="dropdown-item" id="a-articulo">Articulos</a>
-                <a href="index.html" class="dropdown-item" id="a-post">Posts</a>
-                <a href="index.html" class="dropdown-item" id="a-otro">Otros</a>
-              </div>
-            </div>
-            <a href="denuncia.html" class="nav-item nav-link" id="a-denuncia">Denuncias</a>
-            <a href="contacto.html" class="nav-item nav-link" id="a-contacto" style="display: none;">Contactos</a>
-            <a href="index.html" class="nav-item nav-link" id="a-politica">Politicas</a>
+            <a href="actividad.html" class="nav-item nav-link" id="a-actividad">Actividades</a>
+            <a href="recurso.html" class="nav-item nav-link" id="a-recurso">Recursos</a>
+            <a href="denuncia.html" class="nav-item nav-link" id="a-denunciaPublica">Denuncias</a>
+            <a href="evaluacion.html" class="nav-item nav-link" id="a-evaluacion" style="display: none;">Evaluación</a>
+            <a href="instituciones.html" class="nav-item nav-link" id="a-institucion">Instituciones</a>
+            <a href="politica.html" class="nav-item nav-link" id="a-politica">Políticas</a>
           </div>
           <div class="navbar-nav ms-auto" id="btnRegInicio">
             <a href="registro.html" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Registro</a>
@@ -81,18 +89,18 @@
           <div class="navbar-nav ms-auto" style="display: none;" id="correoUsuario">
             <li class="nav-item dropdown pe-3">
               <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <span class="d-none d-md-block dropdown-toggle ps-2 nomUsuario" id="spanCorreo">nombreAdministrador</span>
+                <span class="d-none d-md-block dropdown-toggle ps-2 nomUsuario"
+                  id="spanCorreo">nombreAdministrador</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                 <li class="dropdown-header">
-                  <h6 id = "h6nomUsuario">nomUsuario</h6>
-                  
+                  <h6 id="h6nomUsuario">nomUsuario</h6>
                 </li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <a class="dropdown-item d-flex align-items-center" href="perfil.html" id="a-perfil">
                     <i class="bi bi-person"></i>
                     <span>Mi Perfil</span>
                   </a>

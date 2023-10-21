@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Proyecto No Mas Violencia</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <!-- <link href="img/favicon.icon" rel="icon"> -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start--------------------------------- -->
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0 d-flex align-items-center" id="h1-nomasviolencia">
+            <!-- NOMASVIOLENCIA -->
+            <span style="text-shadow: 2px 2px 4px #2296D5;">NO</span>
+            <span class="font-weight-bold" style="
+                text-shadow: 2px 2px 4px #ffcc00;
+                display: inline-block; 
+                white-space: nowrap; 
+                transform: rotate(0deg);
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                line-height: 1em;
+                font-size: 14px;
+                color: #F70337;
+                ">MAS</span>
+            <span style="text-shadow: 2px 2px 4px #2296D5;">VIOLENCIA</span>
+            <!-- <img src="img/nomasviolencia.jpeg" alt="Logo" style="width: 300px; height: 500px;"> -->
+          </h1>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="#" class="nav-item nav-link" id="a-inicio">Inicio</a>
+            <a href="#" class="nav-item nav-link" id="a-actividad">Actividades</a>
+            <a href="#" class="nav-item nav-link" id="a-recurso">Recursos</a>
+            <a href="#" class="nav-item nav-link" id="a-denunciaPublica">Denuncias</a>
+            <a href="#" class="nav-item nav-link active" id="a-evaluacion">Evaluación</a>
+            <a href="#" class="nav-item nav-link" id="a-institucion">Instituciones</a>
+            <a href="#" class="nav-item nav-link" id="a-politica">Políticas</a>
+          </div>
+          <div class="navbar-nav ms-auto" id="btnRegInicio">
+            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Registro</a>
+            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Inicio
+              Sesion</a>
+          </div>
+          <div class="navbar-nav ms-auto" style="display: none;" id="correoUsuario">
+            <li class="nav-item dropdown pe-3">
+              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                <span class="d-none d-md-block dropdown-toggle ps-2 nomUsuario"
+                  id="spanCorreo">nombreAdministrador</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                <li class="dropdown-header">
+                  <h6 id="h6nomUsuario">nomUsuario</h6>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="perfil.html" id="a-perfil">
+                    <i class="bi bi-person"></i>
+                    <span>Mi Perfil</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="#" id="cerrar_sesion">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Cerrar Sesión</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar & Hero Start End ----------------------------- -->
+
+    <!-- AQUI EMPIEZA LO CHIDO --------------------------------------->
+    <div class="container-xxl bg-primary page-header">
+        <div class="container text-center">
+            <h1 class="text-white animated zoomIn mb-3">¿Soy violento/a?</h1>
+            <h5 class="text-white animated zoomIn mb-2">realiza un test para comprobarlo</h5>
+        </div>
+    </div>
+
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <h4>Realizar Test</h4>
+                    <div>
+                        <h6>aqui estoy</h6>
+                        <div class="list-group">
+                            <button type="button" class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal-test1">Test 1</button>
+                            <button type="button"  class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal-test2">Test 2</button>
+                            <!-- <button type="button" class="btn list-group-item list-group-item-action"data-bs-target="#modal-test3">test 3</button>
+                            <button type="button"  class="btn list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal-test4">Test 4</button> -->
+                        </div>
+                        <h6>aqui termino</h6>
+                    </div>
+
+
+
+
+                    <button class="btn btn-primary"  data-bs-target="#modal-mistest">Test Realizados</button>
+                    <table id="tabla-evaluacion" class="table table-striped">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Titulo del test</th>
+                                <th>Nivel Riesgo</th>
+                                <th>Recomendacion</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se insertarán las filas de usuarios tabla-contactos  -->
+                        </tbody>
+                    </table>
+                                        <!-- VENTANA TEST 1 -->
+                                        <div class="modal fade" id="modal-test1" aria-current="true" data-bs-backdrop="static" >
+                                            <div class="modal-dialog modal-dialog-scrollableº">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5>Test 1</h5>
+                                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+
+                                                    <form id="form-test">
+                                                        <div class="modal-body">
+                                                        <legend class="col-form-label  pt-0">Pregunta 1: pregunta relacionada con el test</legend>
+                                                        <div class="col-sm-10">
+                                                          <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios11" value="Masculino"
+                                                              checked="">
+                                                            <label class="form-check-label" for="gridRadios11">
+                                                              Verdadero
+                                                            </label>
+                                                          </div>
+                                                          <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios12" value="Femenino">
+                                                            <label class="form-check-label" for="gridRadios12">
+                                                              Falso
+                                                            </label>
+                                                          </div>
+
+                                                          <legend class="col-form-label  pt-0">Pregunta 2:segunda pregunta relacionada con el test</legend>
+                                                          <div class="col-sm-10">
+                                                            <div class="form-check">
+                                                              <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios21" value="Masculino"
+                                                                checked="">
+                                                              <label class="form-check-label" for="gridRadios11">
+                                                                Verdadero
+                                                              </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                              <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios22" value="Femenino">
+                                                              <label class="form-check-label" for="gridRadios12">
+                                                                Falso
+                                                              </label>
+                                                            </div>
+                                                        
+                                                            <legend class="col-form-label pt-0">Pregunta 3</legend>
+                                                            <div class="col-sm-10">
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios31" value="Masculino"
+                                                                  checked="">
+                                                                <label class="form-check-label" for="gridRadios11">
+                                                                  Verdadero
+                                                                </label>
+                                                              </div>
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios32" value="Femenino">
+                                                                <label class="form-check-label" for="gridRadios12">
+                                                                  Falso
+                                                                </label>
+                                                              </div>
+
+                                                              <legend class="col-form-label  pt-0">Pregunta 4</legend>
+                                                              <div class="col-sm-10">
+                                                                <div class="form-check">
+                                                                  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios41" value="Masculino"
+                                                                    checked="">
+                                                                  <label class="form-check-label" for="gridRadios11">
+                                                                    Verdadero
+                                                                  </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                  <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios42" value="Femenino">
+                                                                  <label class="form-check-label" for="gridRadios12">
+                                                                    Falso
+                                                                  </label>
+                                                                </div>
+
+                                                                <legend class="col-form-label pt-0">Pregunta 5</legend>
+                                                                <div class="col-sm-10">
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios51" value="Masculino"
+                                                                      checked="">
+                                                                    <label class="form-check-label" for="gridRadios11">
+                                                                      Verdadero
+                                                                    </label>
+                                                                  </div>
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios52" value="Femenino">
+                                                                    <label class="form-check-label" for="gridRadios12">
+                                                                      Falso
+                                                                    </label>
+                                                                  </div>
+
+                                                                  <legend class="col-form-label pt-0">Pregunta 6</legend>
+                                                                  <div class="col-sm-10">
+                                                                    <div class="form-check">
+                                                                      <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios61" value="Masculino"
+                                                                        checked="">
+                                                                      <label class="form-check-label" for="gridRadios11">
+                                                                        Verdadero
+                                                                      </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                      <input class="form-check-input" type="radio" name="gridRadios5" id="gridRadios62" value="Femenino">
+                                                                      <label class="form-check-label" for="gridRadios12">
+                                                                        Falso
+                                                                      </label>
+                                                                    </div>
+
+                                                                    <legend class="col-form-label pt-0">Pregunta 7</legend>
+                                                                    <div class="col-sm-10">
+                                                                      <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios71" value="Masculino"
+                                                                          checked="">
+                                                                        <label class="form-check-label" for="gridRadios11">
+                                                                          Verdadero
+                                                                        </label>
+                                                                      </div>
+                                                                      <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="gridRadios6" id="gridRadios72" value="Femenino">
+                                                                        <label class="form-check-label" for="gridRadios12">
+                                                                          Falso
+                                                                        </label>
+                                                                      </div>
+
+                                                                      <legend class="col-form-label  pt-0">Pregunta 8</legend>
+                                                                      <div class="col-sm-10">
+                                                                        <div class="form-check">
+                                                                          <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios81" value="Masculino"
+                                                                            checked="">
+                                                                          <label class="form-check-label" for="gridRadios11">
+                                                                            Verdadero
+                                                                          </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                          <input class="form-check-input" type="radio" name="gridRadios7" id="gridRadios82" value="Femenino">
+                                                                          <label class="form-check-label" for="gridRadios12">
+                                                                            Falso
+                                                                          </label>
+                                                                        </div>
+
+                                                                        <legend class="col-form-label  pt-0">Pregunta 9</legend>
+                                                                        <div class="col-sm-10">
+                                                                          <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="gridRadios8" id="gridRadios91" value="Masculino"
+                                                                              checked="">
+                                                                            <label class="form-check-label" for="gridRadios11">
+                                                                              Verdadero
+                                                                            </label>
+                                                                          </div>
+                                                                          <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="gridRadios8" id="gridRadios92" value="Femenino">
+                                                                            <label class="form-check-label" for="gridRadios12">
+                                                                              Falso
+                                                                            </label>
+                                                                          </div>
+
+                                                                          <legend class="col-form-label  pt-0">Pregunta 10</legend>
+                                                                          <div class="col-sm-10">
+                                                                            <div class="form-check">
+                                                                              <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios101" value="Masculino"
+                                                                                checked="">
+                                                                              <label class="form-check-label" for="gridRadios11">
+                                                                                Verdadero
+                                                                              </label>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                              <input class="form-check-input" type="radio" name="gridRadios9" id="gridRadios102" value="Femenino">
+                                                                              <label class="form-check-label" for="gridRadios12">
+                                                                                Falso
+                                                                              </label>
+                                                                            </div>
+                                                                          </div>
+
+
+                                                                <div class="modal-footer">
+                                                                    <button class="btn btn-danger" id="btn-cancelar"
+                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-success"
+                                                                    id="btn-enviar">Enviar</button>
+                                                                </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FIN TEST 1-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/scriptEvaluacion.js"></script>
+</body>
+
+</html>

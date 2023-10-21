@@ -33,7 +33,6 @@
 </head>
 
 <body>
-
   <div class="container-xxl bg-white p-0">
     <!-- Spinner Start -->
     <div id="spinner"
@@ -47,8 +46,23 @@
     <div class="container-xxl position-relative p-0">
       <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-          <h1 class="m-0" id="h1-nomasviolencia">NoMasViolencia</h1>
-          <!-- <img src="img/logo.png" alt="Logo"> -->
+          <h1 class="m-0 d-flex align-items-center" id="h1-nomasviolencia">
+            <!-- NOMASVIOLENCIA -->
+            <span style="text-shadow: 2px 2px 4px #2296D5;">NO</span>
+            <span class="font-weight-bold" style="
+                text-shadow: 2px 2px 4px #ffcc00;
+                display: inline-block; 
+                white-space: nowrap; 
+                transform: rotate(0deg);
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                line-height: 1em;
+                font-size: 14px;
+                color: #F70337;
+                ">MAS</span>
+            <span style="text-shadow: 2px 2px 4px #2296D5;">VIOLENCIA</span>
+            <!-- <img src="img/nomasviolencia.jpeg" alt="Logo" style="width: 300px; height: 500px;"> -->
+          </h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="fa fa-bars"></span>
@@ -56,20 +70,12 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
             <a href="index.html" class="nav-item nav-link active" id="a-inicio">Inicio</a>
-            <a href="index.html" class="nav-item nav-link" id="a-aprende">Aprende</a>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="a-recurso">Recursos</a>
-              <div class="dropdown-menu m-0">
-                <a href="index.html" class="dropdown-item" id="a-noticia">Noticias</a>
-                <a href="index.html" class="dropdown-item" id="a-evento">Eventos</a>
-                <a href="index.html" class="dropdown-item" id="a-articulo">Articulos</a>
-                <a href="index.html" class="dropdown-item" id="a-post">Posts</a>
-                <a href="index.html" class="dropdown-item" id="a-otro">Otros</a>
-              </div>
-            </div>
-            <a href="denuncia.html" class="nav-item nav-link" id="a-denuncia">Denuncias</a>
-            <a href="contacto.html" class="nav-item nav-link" id="a-contacto" style="display: none;">Contactos</a>
-            <a href="index.html" class="nav-item nav-link" id="a-politica">Politicas</a>
+            <a href="actividad.html" class="nav-item nav-link" id="a-actividad">Actividades</a>
+            <a href="recurso.html" class="nav-item nav-link" id="a-recurso">Recursos</a>
+            <a href="denuncia.html" class="nav-item nav-link" id="a-denunciaPublica">Denuncias</a>
+            <a href="evaluacion.html" class="nav-item nav-link" id="a-evaluacion" style="display: none;">Evaluación</a>
+            <a href="instituciones.html" class="nav-item nav-link" id="a-institucion">Instituciones</a>
+            <a href="politica.html" class="nav-item nav-link" id="a-politica">Políticas</a>
           </div>
           <div class="navbar-nav ms-auto" id="btnRegInicio">
             <a href="registro.html" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Registro</a>
@@ -79,17 +85,18 @@
           <div class="navbar-nav ms-auto" style="display: none;" id="correoUsuario">
             <li class="nav-item dropdown pe-3">
               <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <span class="d-none d-md-block dropdown-toggle ps-2 nomUsuario" id="spanCorreo">nombreAdministrador</span>
+                <span class="d-none d-md-block dropdown-toggle ps-2 nomUsuario"
+                  id="spanCorreo">nombreAdministrador</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                 <li class="dropdown-header">
-                  <h6 id = "h6nomUsuario">nomUsuario</h6>
+                  <h6 id="h6nomUsuario">nomUsuario</h6>
                 </li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <a class="dropdown-item d-flex align-items-center" href="perfil.html" id="a-perfil">
                     <i class="bi bi-person"></i>
                     <span>Mi Perfil</span>
                   </a>
@@ -99,7 +106,7 @@
                 </li>
 
                 <li>
-                  <a class="dropdown-item d-flex align-items-center" href="#" id="cerrar_sesion">
+                  <a class="dropdown-item d-flex align-items-center" id="cerrar_sesion">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Cerrar Sesión</span>
                   </a>
@@ -119,35 +126,47 @@
           <div class="col-lg-12 col-12 p-0">
             <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item  active">
+                  <img src="img/nomasviolencia.jpeg" style="height: 618.75px;" class="carousel-image img-fluid"
+                    alt="...">
+                  <!--
+                  <div class="carousel-caption d-flex flex-column justify-content-end">                  
+                    <h1>Humanity</h1>
+                    <p>Please tell your friends about our website</p>
+                  </div>
+                  -->
+                </div>
+                <div class="carousel-item">
                   <img src="img/ima1.jpg" class="carousel-image img-fluid" alt="...">
 
-                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                  <!--<div class="carousel-caption d-flex flex-column justify-content-end">
                     <h1>be a Kind Heart</h1>
 
                     <p>Professional charity theme based on Bootstrap 5.2.2</p>
-                  </div>
+                  </div>-->
                 </div>
 
                 <div class="carousel-item">
                   <img src="img/ima2.jpg" class="carousel-image img-fluid" alt="...">
-
+                  <!--
                   <div class="carousel-caption d-flex flex-column justify-content-end">
                     <h1>Non-profit</h1>
 
                     <p>You can support us to grow more</p>
                   </div>
+                -->
                 </div>
 
                 <div class="carousel-item">
                   <img src="img/ima4.jpg" class="carousel-image img-fluid" alt="...">
-
-                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                  <!--
+                  <div class="carousel-caption d-flex flex-column justify-content-end">                  
                     <h1>Humanity</h1>
-
                     <p>Please tell your friends about our website</p>
                   </div>
+                  -->
                 </div>
+
               </div>
 
               <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
@@ -169,89 +188,124 @@
     <div class="container-xxl py-6">
       <div class="container">
         <div class="row g-5 align-items-center">
-          <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-            <img class="img-fluid" src="img/ima6.jpg">
+          <div class="col-lg-6 wow zoomIn text-center" data-wow-delay="0.1s">
+            <img class="img-fluid w-75" src="img/ima6.jpg">
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h2 class="mb-4">Qué es la Violencia de Género?</h2>
+            <p class="mb-4">La violencia de género es una forma de violencia que se basa en el género de una persona y
+              se dirige hacia individuos debido a su género o identidad de género. Es importante entender que la
+              violencia de género no se limita a un solo tipo de violencia, sino que puede manifestarse de diversas
+              formas.</p>
+            <p class="mb-4">La violencia de género tiene graves consecuencias físicas, emocionales y psicológicas para
+              las víctimas,
+              y es una violación de los derechos humanos fundamentales. Además, perpetúa la desigualdad de género y la
+              discriminación, y es un obstáculo para la igualdad de género en todas las sociedades.</p>
 
-            <h2 class="mb-4">Que es la Violencia de Genero?</h2>
-            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu
-              diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem
-              sit. Sanctus clita duo justo et tempor eirmod</p>
-            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu
-              diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem
-              sit. Sanctus clita duo justo et tempor eirmod</p>
+            <p class="mb-4">Es fundamental abordar la violencia de género a través de la educación, la concienciación,
+              la legislación
+              y el apoyo a las víctimas. Promover la igualdad de género y combatir la violencia de género son
+              objetivos esenciales para construir sociedades más justas y equitativas.</p>
 
-            <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+            <!-- <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a> -->
           </div>
         </div>
       </div>
     </div>
-
 
     <div class="container-xxl py-6">
       <div class="container">
-        <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-          <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Services</div>
-          <h2 class="mb-5">We Provide Solutions On Your Business</h2>
-        </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"
             style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima1.jpg" alt="">
-              <h4 class="mb-0">Web Design</h4>
+              <h4 class="mb-0">Violencia física</h4>
+              <br>
+              <p class="text-dark">Incluye golpes, heridas y cualquier forma de agresión física que
+                cause daño a la persona.</p>
             </a>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s"
             style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima2.jpg" alt="">
-              <h4 class="mb-0">App Development</h4>
+              <h4 class="mb-0">Violencia psicologica</h4>
+              <br>
+              <p class="text-dark">Implica insultos, humillaciones, amenazas y
+                manipulación emocional.</p>
             </a>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima3.jpg" alt="">
-              <h4 class="mb-0">SEO Optimization</h4>
+              <h4 class="mb-0">Violencia sexual</h4>
+              <br>
+              <p class="text-dark">Incluye el acoso sexual, la violación y cualquier acto sexual no
+                consentido.</p>
             </a>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"
             style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima4.jpg" alt="">
-              <h4 class="mb-0">Social Marketing</h4>
+              <h4 class="mb-0">Violencia económica</h4>
+              <br>
+              <p class="text-dark">Se refiere al control económico, la negación de recursos
+                financieros y la dependencia económica forzada.</p>
             </a>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s"
             style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima5.jpg" alt="">
-              <h4 class="mb-0">Email Marketing</h4>
+              <h4 class="mb-0">Violencia simbólica o cultural</h4>
+              <p class="text-dark">Involucra la perpetuación de estereotipos de género
+                y la discriminación basada en el género en la sociedad y la cultura.</p>
             </a>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-            <a class="service-item d-block rounded text-center h-100 p-4" href="">
+            <a class="service-item d-block rounded text-center h-100 p-4">
               <img class="img-fluid rounded mb-4" src="img/ima6.jpg" alt="">
-              <h4 class="mb-0">PPC Advertising</h4>
+              <h4 class="mb-0">violencia institucional</h4>
+              <p class="text-dark">Se caracteriza por el abuso de autoridad y el uso indebido del poder por parte de
+                las instituciones para controlar, oprimir o discriminar a individuos o grupos de personas.</p>
             </a>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <h2 class="mb-4">Quiénes Somos</h2>
+          <p>Somos una organización dedicada a la prevención y erradicación de la violencia de género y el maltrato en
+            todas sus formas. Nuestro objetivo es promover la igualdad, el respeto y la dignidad de todas las personas,
+            sin importar su género, raza, orientación sexual o creencias. Trabajamos incansablemente para crear
+            conciencia, proporcionar apoyo a las víctimas y abogar por un mundo donde la violencia no tenga cabida.</p>
+        </div>
+        <div class="col-lg-4">
+          <h2 class="mb-4">Misión</h2>
+          <p>Nuestra misión es poner fin a la violencia de género en todas sus manifestaciones. Nos esforzamos por
+            empoderar a las víctimas, educar a la sociedad y abogar por políticas y leyes que protejan a las personas
+            contra la violencia y el abuso. Trabajamos en estrecha colaboración con comunidades, gobiernos y
+            organizaciones para construir un mundo más seguro y equitativo para todos.</p>
+        </div>
+        <div class="col-lg-4">
+          <h2 class="mb-4">Visión</h2>
+          <p>Nuestra visión es un mundo en el que todas las personas vivan libres de violencia y temor. Imaginamos una
+            sociedad donde la igualdad de género sea una realidad, donde todas las personas sean respetadas y valoradas,
+            y donde la violencia sea cosa del pasado. Trabajamos hacia este ideal, inspirando un cambio cultural que
+            promueva la paz, la justicia y el respeto mutuo.</p>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-
-  <div class="bg-secondary rounded h-100 p-4">
-    <h6 class="mb-4">Pie Chart</h6>
-    <canvas id="pie-chart" width="465" height="465"
-      style="display: block; box-sizing: border-box; height: 465px; width: 465px;"></canvas>
-  </div>
-
-
-
-
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s"
@@ -356,3 +410,7 @@
 </body>
 
 </html>
+
+
+<!-- 
+https://proyecto-281-1.eleazar-jhonnyj.repl.co/api/denuncia -->

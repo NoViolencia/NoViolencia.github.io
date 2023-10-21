@@ -1,3 +1,7 @@
+// import configuracion from './constantes.mjs';
+// const ruta = configuracion.ruta;
+const ruta = "https://render-proyecto281-backend.onrender.com/"+"api";
+//-----------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const formularioUsuario = document.getElementById("formulario-usuario");
 
@@ -27,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const contrasenia = document.getElementById("contrasenia").value;
     const repitaContrasenia = document.getElementById("repita-contrasenia").value;
-
-    
 
     // Validaciones -----------------------------------------------------
     const valNombre = /^[a-zA-Z\s]{3,30}$/;
@@ -151,11 +153,12 @@ document.addEventListener("DOMContentLoaded", function () {
       correo: correo,
       telefono: telefono,
       nombre_usuario: nombre_usuario,
-      contrasenia: contrasenia
+      contrasenia: contrasenia,
+      reg : 1 // el valor 1 indica que el usuario se registra solo, 2 cuando lo agrega un administrador
     };
 
     // Realiza una solicitud POST al backend
-    fetch("https://prueba3-281-production.up.railway.app/api/usuario", {
+    fetch(`${ruta}/usuario_normal`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

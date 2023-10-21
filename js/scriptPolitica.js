@@ -1,20 +1,18 @@
 // import configuracion from './constantes.mjs';
 // const ruta = configuracion.ruta;
 const ruta = "https://render-proyecto281-backend.onrender.com/"+"api";
-// ------------------------------------------------
+// -------------------------------------------------
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(window.location.search);
 const correoUsuario = urlParams.get('correo');
 const id_usuario = urlParams.get('id_usuario');
 const rol = urlParams.get('rol');
-if (correoUsuario != null) {
-  if (correoUsuario != 'null') {
-    document.getElementById('btnRegInicio').style.display = 'none';
-    document.getElementById('correoUsuario').style.display = 'block';
-    document.getElementById('spanCorreo').textContent = correoUsuario;
-    document.getElementById('h6nomUsuario').textContent = correoUsuario;
-    document.getElementById('a-evaluacion').style.display = 'block';
-  }
+if (correoUsuario != 'null') {
+  document.getElementById('btnRegInicio').style.display = 'none';
+  document.getElementById('correoUsuario').style.display = 'block';
+  document.getElementById('spanCorreo').textContent = correoUsuario;
+  document.getElementById('h6nomUsuario').textContent = correoUsuario;
+  document.getElementById('a-evaluacion').style.display = 'block';
 }
 const cerrarSesionLink = document.getElementById("cerrar_sesion");
 cerrarSesionLink.addEventListener("click", function(event) {
@@ -77,18 +75,3 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = nuevaURL;
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -18,6 +18,8 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
+  <!-- Para iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +56,7 @@
 
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img alt="Profile" class="rounded-circle" id="img-imagenIconoUsuario" style="max-width: 30px; max-height: 30px; min-width: 30px; min-height: 30px;">
             <span class="d-none d-md-block dropdown-toggle ps-2" id="span-correoUsuario">nomUsuario</span>
           </a>
 
@@ -68,7 +70,8 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html" id="a-cerrar_sesion">
+              <a class="dropdown-item d-flex align-items-center" href="#" id="a-mi_perfil" data-bs-toggle="modal"
+                data-bs-target="#modal-perfilUsuario">
                 <i class="bi bi-person"></i>
                 <span>Mi Perfil</span>
               </a>
@@ -97,37 +100,37 @@
     <ul class="sidebar-nav">
       <li class="nav-item" id="li-usuarios">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav" id="a-usuarios">
-          <i class="bi bi-menu-button-wide"></i> Usuarios
+          <i class="bi bi-person-lines-fill"></i> Usuarios
         </a>
       </li>
       <li class="nav-item" id="li-permisos">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Permisos
+          <i class="bi bi-person-fill-gear"></i> Permisos
         </a>
       </li>
       <li class="nav-item" id="li-recursos">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Recursos
+          <i class="bi bi-boxes"></i> Recursos
         </a>
       </li>
       <li class="nav-item" id="li-ayuda">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Ayuda
+          <i class="bi bi-building"></i> Institución Ayuda
         </a>
       </li>
       <li class="nav-item" id="li-denuncias">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Denuncias
+          <i class="bi bi-journal-richtext"></i> Denuncias
         </a>
       </li>
       <li class="nav-item" id="li-reportados">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Reportados
+          <i class="bi bi-person-dash-fill"></i> Reportados
         </a>
       </li>
       <li class="nav-item" id="li-aprende">
         <a href="#" class="nav-link collapsed" data-bs-target="components-nav">
-          <i class="bi bi-menu-button-wide"></i> Aprende
+          <i class="bi bi-menu-button-wide"></i> Actividad
         </a>
       </li>
 
@@ -135,6 +138,144 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
+    <!-- VENTANA MODAL PERFIL DE USUARIO -->
+    <div class="modal fade modal-lg" id="modal-perfilUsuario" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-scrollableº">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5> <strong>Perfil de Usuario</strong></h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <form id="form-perfilUsuario" method="POST" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-sm-12 col-md-5">
+                  <input type="file" class="form-control" id="imagenPerfil" accept="image/*">
+                  <div class="d-flex justify-content-center align-items-center" style="margin-top: 5px;">
+                    <img class="rounded-circle" id="img-usuarioPerfil" style="max-width: 200px; max-height: 200px; min-width: 200px; min-height: 200px;">
+                  </div>
+                  <div class="text-center my-3">
+                    <h5 id="h5-nombreUsuarioPerfil"><strong id="strong-nombreUsuarioPerfil">Nombre de Usuario</strong>
+                    </h5>
+                    <h6 id="h6-correoUsuarioPerfil">correo de usuario</h6>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                  <h4><strong>Datos Personales</strong></h4>
+                  <div style="max-height: 300px; overflow-y: auto;">
+                    <!-- <form id="form-perfilUsuario"> -->
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-ciUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-ciUsuarioPerfil">CI</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            CI de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nombreUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-nombreUsuarioPerfil">Nombre Completo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaUsuarioPerfil">Fecha_Nac</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha nac no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1Perfil"
+                                  value="Masculino" checked="">
+                                <label class="form-check-label" for="gridRadios1Perfil">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2Perfil"
+                                  value="Femenino">
+                                <label class="form-check-label" for="gridRadios2Perfil">
+                                  Femenino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3Perfil"
+                                  value="Otro">
+                                <label class="form-check-label" for="gridRadios3Perfil">
+                                  Otro
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-direccionUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-direccionUsuarioPerfil">Direccion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Direccion de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-correoUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-correoUsuarioPerfil">Correo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Correo de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoUsuarioPerfil">Telefono</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-userUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-userUsuarioPerfil">Usuario</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre_usuario de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-passwordUsuarioPerfil"
+                            placeholder="name@example.com" required>
+                          <label for="input-passwordUsuarioPerfil">Contraseña</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Password de usuario no válido.
+                          </div>
+                        </div>
+                      </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-danger" id="btn-NOguardarCambiosPerfil" data-bs-dismiss="modal">Salir</button>
+            <button type="submit" class="btn btn-success" id="btn-guardarCambiosPerfil">Guardar Cambios</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- FIN VENTANA MODAL DE PERFIL DE USUARIO -->
 
 
     <section class="section dashboard" id="section-principal">
@@ -145,132 +286,883 @@
 
     <section class="section dashboard" id="section-usuarios" style="display: none;">
       <div class="pagetitle">
-        <h1>Lista de Usuarios</h1>
+        <h1>Control de Usuarios</h1>
       </div>
-      <table id="tabla-usuarios" class="table table-striped">
-        <thead class="table-success">
-          <tr>
-            <th>CI</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Direccion</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Genero</th>
-            <th>NombreUsuario</th>
-            <th>Telefono</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Aquí se insertarán las filas de usuarios -->
-        </tbody>
-      </table>
+      <div class="container-xxl">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-registrarUsuario">Agregar
+                Usuario</button>
+              <table id="tabla-usuarios" class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th>CI</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Fecha_Nac</th>
+                    <th>Genero</th>
+                    <th>Usuario</th>
+                    <th>Telefono</th>
+                    <!-- <th>Password</th> -->
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí se insertarán las filas de usuarios -->
+                </tbody>
+              </table>
+
+              <!-- VENTANA MODAL PARA LISTAR CONTACTOS DE UN USUARIO -->
+              <div class="modal fade" id="modal-listarContactosUsuario" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Contactos de Usuario</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <h5 id="h5-nombreUsuarioContacto"></h5>
+                    </div>
+                    <div class="modal-footer">
+                      <table id="tabla-contactosUsr" class="table table-striped">
+                        <thead class="table-success">
+                          <tr>
+                            <th>Nombre de Contacto</th>
+                            <th>Telefono/Celular</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA LISTAR CONTACTOS DE UN USUARIO -->
+
+              <!-- VENTANA MODAL PARA REGISTRAR Usuario -->
+              <div class="modal fade" id="modal-registrarUsuario" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Registra un Usuario</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-registrarUsuario" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenUsuario">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-ciUsuario" placeholder="name@example.com"
+                            required>
+                          <label for="input-ciUsuario">CI</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            CI de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nomUsuario" placeholder="name@example.com"
+                            required>
+                          <label for="input-nomUsuario">Nombre Completo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaUsuario" placeholder="name@example.com"
+                            required>
+                          <label for="input-fechaUsuario">Fecha_Nac</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha nac no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                  value="Masculino" checked="">
+                                <label class="form-check-label" for="gridRadios1">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                  value="Femenino">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Femenino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                                  value="Otro">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Otro
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-direccionUsuario"
+                            placeholder="name@example.com" required>
+                          <label for="input-direccionUsuario">Direccion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Direccion de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-correoUsuario"
+                            placeholder="name@example.com" required>
+                          <label for="input-correoUsuario">Correo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Correo de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoUsuario"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoUsuario">Telefono</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-userUsuario" placeholder="name@example.com"
+                            required>
+                          <label for="input-userUsuario">Usuario</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre_usuario de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-passwordUsuario"
+                            placeholder="name@example.com" required>
+                          <label for="input-passwordUsuario">Contraseña</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Password de usuario no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegUsuario"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-registrarUsuario">Registrar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA REGISTRAR Usuario -->
+
+              <!-- VENTANA MODAL PARA EDITAR Usuario -->
+              <div class="modal fade" id="modal-editarUsuario" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Editar Usuario</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-editarUsuario" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <img src="" alt="" id="img-imagenUsuarioEditar" style="width: 100%;">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenUsuarioEditar">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-ciUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-ciUsuarioEditar">CI</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            CI de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nomUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-nomUsuarioEditar">Nombre</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaUsuarioEditar">Fecha_Nac</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha nac no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1Editar"
+                                  value="Masculino" checked="">
+                                <label class="form-check-label" for="gridRadios1Editar">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2Editar"
+                                  value="Femenino">
+                                <label class="form-check-label" for="gridRadios2Editar">
+                                  Femenino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3Editar"
+                                  value="Otro">
+                                <label class="form-check-label" for="gridRadios3Editar">
+                                  Otro
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-direccionUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-direccionUsuarioEditar">Direccion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Direccion de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-correoUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-correoUsuarioEditar">Correo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Correo de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoUsuarioEditar">Telefono</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-userUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-userUsuarioEditar">Usuario</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre_usuario de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-passwordUsuarioEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-passwordUsuarioEditar">Password</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Password de usuario no válido.
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegUsuario"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-editarUsuario">Guardar cambios</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA EDITAR Usuario -->
+
+              <!-- VENTANA MODAL PARA BORRAR Usuario -->
+              <div class="modal fade" id="modal-eliminarUsuario" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>¿Esta seguro de eliminar el Usuario?</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <p id="p-Usuario"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-danger" id="btn-NOeliminarUsuario" data-bs-dismiss="modal">NO</button>
+                      <button type="submit" class="btn btn-success" id="btn-SIeliminarUsuario">SI</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA BORRAR Usuario -->
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section class="section dashboard" id="section-permisos" style="display: none;">
       <div class="pagetitle">
         <h1>Permisos a Usuario</h1>
       </div>
-      <table id="tabla-permisos" class="table table-striped">
-        <thead class="table-success">
-          <tr>
-            <th>ID Usuario</th>
-            <th>Nombre_Usuario</th>
-            <th>Rol</th>
+      <div class="container-xxl">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
 
-            <th><button type="button" class="btn btn-link">
-                <i class="bi bi-pencil-square"></i>
-              </button></th>
-            <th>
-              <button type="button" class="btn btn-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-pencil-square" viewBox="0 0 16 16">
-                  <path
-                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z">
-                  </path>
-                  <path fill-rule="evenodd"
-                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z">
-                  </path>
-                </svg>
-              </button>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Aquí se insertarán las filas de usuarios -->
-        </tbody>
-      </table>
+              <button class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#modal-registrarUsuarioAdministrador">Agregar
+                Usuario</button>
+              <table id="tabla-usuariosAdministrador" class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th>CI</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Fecha_Nac</th>
+                    <th>Genero</th>
+                    <th>Usuario</th>
+                    <th>Telefono</th>
+                    <!-- <th>Password</th> -->
+                    <th></th> <!-- Editar -->
+                    <th></th> <!-- Eliminar -->
+                    <th>Rol</th> <!-- Rol -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí se insertarán las filas de usuarios -->
+                </tbody>
+              </table>
+
+              <!-- VENTANA MODAL PARA REGISTRAR ADMINISTRADOR -->
+              <div class="modal fade" id="modal-registrarUsuarioAdministrador" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Registra un Usuario</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-registrarUsuarioAdministrador" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenUsuarioAdministrador">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-ciUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-ciUsuarioAdministrador">CI</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            CI de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nomUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-nomUsuarioAdministrador">Nombre Completo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaUsuarioAdministrador">Fecha_Nac</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha nac no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios1Administrador" value="Masculino" checked="">
+                                <label class="form-check-label" for="gridRadios1Administrador">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios2Administrador" value="Femenino">
+                                <label class="form-check-label" for="gridRadios2Administrador">
+                                  Femenino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios3Administrador" value="Otro">
+                                <label class="form-check-label" for="gridRadios3Administrador">
+                                  Otro
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-direccionUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-direccionUsuarioAdministrador">Direccion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Direccion de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-correoUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-correoUsuarioAdministrador">Correo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Correo de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoUsuarioAdministrador">Telefono</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-userUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-userUsuarioAdministrador">Usuario</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre_usuario de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-passwordUsuarioAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-passwordUsuarioAdministrador">Contraseña</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Password de usuario no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegUsuarioAdministrador"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success"
+                          id="btn-registrarUsuarioAdministrador">Registrar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA REGISTRAR ADMINISTRADOR -->
+
+              <!-- VENTANA MODAL PARA EDITAR ADMINISTRADOR -->
+              <div class="modal fade" id="modal-editarUsuarioAdministrador" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Editar Usuario</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-editarUsuarioAdministrador" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <img id="img-imagenUsuarioAdministradorEditar" alt="" style="width: 100%;">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenUsuarioEditarAdministrador">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-ciUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-ciUsuarioEditarAdministrador">CI</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            CI de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nomUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-nomUsuarioEditarAdministrador">Nombre</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaUsuarioEditarAdministrador">Fecha_Nac</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha nac no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios1EditarAdministrador" value="Masculino" checked="">
+                                <label class="form-check-label" for="gridRadios1EditarAdministrador">
+                                  Masculino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios2EditarAdministrador" value="Femenino">
+                                <label class="form-check-label" for="gridRadios2EditarAdministrador">
+                                  Femenino
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios"
+                                  id="gridRadios3EditarAdministrador" value="Otro">
+                                <label class="form-check-label" for="gridRadios3EditarAdministrador">
+                                  Otro
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-direccionUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-direccionUsuarioEditarAdministrador">Direccion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Direccion de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-correoUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-correoUsuarioEditarAdministrador">Correo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Correo de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoUsuarioEditarAdministrador">Telefono</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-userUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-userUsuarioEditarAdministrador">Usuario</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre_usuario de usuario no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-passwordUsuarioEditarAdministrador"
+                            placeholder="name@example.com" required>
+                          <label for="input-passwordUsuarioEditarAdministrador">Password</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Password de usuario no válido.
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegUsuarioAdministrador"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-editarUsuarioAdministrador">Guardar
+                          cambios</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA EDITAR ADMINISTRADOR -->
+
+              <!-- VENTANA MODAL PARA BORRAR ADMINISTRADOR -->
+              <div class="modal fade" id="modal-eliminarUsuarioAdministrador" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>¿Esta seguro de eliminar el Usuario?</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <p id="p-UsuarioAdministrador"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-danger" id="btn-NOeliminarUsuarioAdministrador"
+                        data-bs-dismiss="modal">NO</button>
+                      <button type="submit" class="btn btn-success" id="btn-SIeliminarUsuarioAdministrador">SI</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA BORRAR ADMINISTRADOR -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </section>
 
     <section class="section dashboard" id="section-recursos" style="display: none;">
       <div class="pagetitle">
-        <h1>Control de Noticias</h1>
+        <h1>Control de Recursos</h1>
       </div>
-      <section class="section dashboard">
-        <div class="container-xxl py-6">
-          <div class="container">
+      <div class="container-xxl">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
 
-            <div class="row justify-content-center">
-              <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
-                <form>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                        <label for="name">Your Name</label>
-                      </div>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-registrarRecursos">Agregar
+                Recurso</button>
+              <table id="tabla-recursos" class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+
+                    <th>Titulo</th>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                    <!-- <th>Url</th> -->
+                    <th>Autor</th>
+                    <th>Contenido</th>
+                    <th></th> <!-- visibilizar -->
+                    <th></th> <!-- editar -->
+                    <th></th> <!-- eliminar -->
+                    <th></th> <!-- ver comentarios -->
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+
+              <!-- VENTANA MODAL PARA REGISTRAR RECURSO-->
+              <div class="modal fade" id="modal-registrarRecursos" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Registra un Recurso</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                        <label for="email">Your Email</label>
+                    <form id="form-registrarRecursos" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenRecursos" multiple="" name="image">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tituloRecursos"
+                            placeholder="name@example.com" required>
+                          <label for="input-tituloRecursos">Titulo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            titulo de recurso no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tipoRecursos" placeholder="name@example.com"
+                            required>
+                          <label for="input-tipoRecursos">Tipo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            tipo de recurso no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionRecursos"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionRecursos">Descripcion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            descripcion de recurso no válido.
+                          </div>
+                        </div>
+
+                        <!-- <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-urlRecursos" placeholder="name@example.com"
+                            required>
+                          <label for="input-urlRecursos">Url</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            url de recurso no válido.
+                          </div>
+                        </div> -->
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-autorRecursos"
+                            placeholder="name@example.com" required>
+                          <label for="input-autorRecursos">Autor</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            autor de recurso no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-contenidoRecursos"
+                            placeholder="name@example.com" required>
+                          <label for="input-contenidoRecursos">Contenido</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            contenido de recurso no válido.
+                          </div>
+                        </div>
+
+
                       </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                        <label for="subject">Subject</label>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegRecursos"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-registrarRecursos">Registrar</button>
                       </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA REGISTRAR RECURSO -->
+
+              <!-- VENTANA MODAL PARA EDITAR RECURSO-->
+              <div class="modal fade" id="modal-editarRecursos" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Editar recurso</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="col-12">
-                      <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="message"
-                          style="height: 150px"></textarea>
-                        <label for="message">Message</label>
+                    <form id="form-editarRecursos" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <img src="" alt="" id="img-imagenRecursosEditar" style="width: 100%;">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenRecursosEditar">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tituloRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-tituloRecursosEditar">Titulo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            titulo de recurso no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tipoRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-tipoRecursosEditar">Tipo</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            tipo de recurso no válido.
+                          </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionRecursosEditar">Descripcion</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            descripcion de recurso no válido.
+                          </div>
+                        </div>
+
+                        <!-- <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-urlRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-urlRecursosEditar">Url</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            url de recurso no válido.
+                          </div>
+                        </div> -->
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-autorRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-autorRecursosEditar">Autor</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            autor de recurso no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-contenidoRecursosEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-contenidoRecursosEditar">Contenido</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            contenido de recurso no válido.
+                          </div>
+                        </div>
+
                       </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegRecursos"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-editarRecursos">Guardar cambios</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA EDITAR RECURSO -->
+
+              <!-- VENTANA MODAL PARA BORRAR RECURSO -->
+              <div class="modal fade" id="modal-eliminarRecursos" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>¿Esta seguro de eliminar el Usuario?</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+
+                    <div class="modal-body">
+                      <p id="p-Recursos"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-danger" id="btn-NOeliminarRecursos" data-bs-dismiss="modal">NO</button>
+                      <button type="submit" class="btn btn-success" id="btn-SIeliminarRecursos">SI</button>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
+              <!-- FIN VENTANA MODAL PARA BORRAR RECURSO -->
+
+              <!-- VENTANA MODAL PARA VER COMENTARIOS DE RECURSO -->
+              <div class="modal fade" id="modal-verComentarios" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Comentarios del Recurso</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h4 id="h4-nombreRecurso"></h4>
+                    </div>
+                    <div class="modal-footer">
+                      <table id="tabla-verComentarios" class="table table-striped">
+                        <thead class="table-success">
+                          <tr>
+                            <th>fecha</th>
+                            <th>correo</th>
+                            <th>comentario</th>
+                            <th></th> <!-- visibilizar -->
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA VER COMENTARIOS DE RECURSO -->
             </div>
           </div>
         </div>
-      </section>
-      <!-- Contact Start -->
-      <section class="section dashboard">
-        <div class="d-flex justify-content-end mt-3">
-          <button type="submit" class="btn btn-primary">Agregar</button>
-        </div>
+      </div>
 
-        <table id="tabla-usuarios" class="table table-striped">
-          <thead class="table-success">
-            <tr>
-              <th>ID Noticia</th>
-              <th>Titulo</th>
-              <th>Descripcion</th>
-              <th>Fecha</th>
-              <th>Accion</th>
-              <th>Visible</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Aquí se insertarán las filas de usuarios -->
-          </tbody>
-        </table>
-
-      </section>
 
     </section>
 
@@ -278,24 +1170,450 @@
       <div class="pagetitle">
         <h1>Instituciones de Ayuda</h1>
       </div>
+      <div class="container-xxl">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+              <button class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#modal-registrarInstitucion">Agregar
+                Institucion Ayuda</button>
+              <table id="tabla-instituciones" class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th>Nombre Institución</th>
+                    <th>Teléfono</th>
+                    <th>Descripción</th>
+                    <th>url</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí se insertarán las filas de usuarios -->
+                </tbody>
+              </table>
+
+              <!-- VENTANA MODAL PARA REGISTRAR INSTITUCION -->
+              <div class="modal fade" id="modal-registrarInstitucion" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Registra una Institución de Ayuda</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-registrarInstitución" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenInstitucion">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nombreInstitucion"
+                            placeholder="name@example.com" required>
+                          <label for="input-nombreInstitucion">Nombre de Institución</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de institución no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoInstitucion"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoInstitucion">Teléfono/Celular</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono/Celular no válido.
+                          </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionInstitucion"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionInstitucion">Descripción</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Descripcion de institucion no válida.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-urlInstitucion"
+                            placeholder="name@example.com" required>
+                          <label for="input-urlInstitucion">URL</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            URL no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegInstitucion"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-registrarInstitucion">Registrar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA REGISTRAR INSTITUCION -->
+
+              <!-- VENTANA MODAL PARA EDITAR INSTITUCION -->
+              <div class="modal fade" id="modal-editarInstitucion" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Editar Información de Institución de Ayuda</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <form id="form-registrarInstituciónEditar" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <img src="" alt="" id="img-imagenInstitucionEditar" style="width: 100%;">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenInstitucionEditar">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nombreInstitucionEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-nombreInstitucionEditar">Nombre de Institución</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de institución no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-telefonoInstitucionEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-telefonoInstitucionEditar">Teléfono/Celular</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Telefono/Celular no válido.
+                          </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionInstitucionEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionInstitucionEditar">Descripción</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Descripcion de institucion no válida.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-urlInstitucionEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-urlInstitucionEditar">URL</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            URL no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegInstitucionEditar"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-registrarInstitucionEditar">Guardar
+                          cambios</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA EDITAR INSTITUCION -->
+
+              <!-- VENTANA MODAL PARA BORRAR INSTITUCION -->
+              <div class="modal fade" id="modal-eliminarInstitucion" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>¿Esta seguro de eliminar la Institucion Ayuda? de nombre:</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <p id="p-institucion"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-danger" id="btn-NOeliminarInstitucion" data-bs-dismiss="modal">NO</button>
+                      <button type="submit" class="btn btn-success" id="btn-SIeliminarInstitucion">SI</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA BORRAR INSTITUCION -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section dashboard" id="section-denuncias" style="display: none;">
       <div class="pagetitle">
         <h1>Lista de Denuncias</h1>
       </div>
+      <table id="tabla-denuncias" class="table table-striped">
+        <thead class="table-success">
+          <tr>
+            <th>ID Usuario</th>
+            <th>Nombre de Victima</th>
+            <th>Nombre Agresor</th>
+            <th>Tipo Violencia</th>
+            <th>Tipo Denuncia</th>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Ubicación</th>
+            <th>Pruebas</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertarán las filas de usuarios -->
+          <!-- Ventana modal de pruebas de denuncia -->
+          <div class="modal fade modal-lg" id="modal-pruebaDenuncia" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-scrollableº ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5>Prueba de Denuncia</h5>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="" alt="" id="img-prueba" style="width: 100%; height: 100%;">
+                </div>
+                <!-- <div class="modal-footer">
+                  <button class="btn btn-danger" id="btn-NOeliminarUsuario" data-bs-dismiss="modal">NO</button>
+                  <button type="submit" class="btn btn-success" id="btn-SIeliminarUsuario">SI</button>
+                </div> -->
+    
+              </div>
+            </div>
+          </div>
+        </tbody>
+
+        
+      </table>
     </section>
 
     <section class="section dashboard" id="section-reportados" style="display: none;">
       <div class="pagetitle">
         <h1>Lista de Reportados</h1>
       </div>
+      <table id="tabla-usuariosReportados" class="table table-striped">
+        <thead class="table-success">
+          <tr>
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Direccion</th>
+            <th>Fecha_Nac</th>
+            <th>Genero</th>
+            <th>Usuario</th>
+            <th>Telefono</th>
+            <!-- <th>Password</th> -->
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se insertarán las filas de usuarios -->
+        </tbody>
+      </table>
     </section>
 
     <section class="section dashboard" id="section-aprende" style="display: none;">
       <div class="pagetitle">
         <h1>Aprende</h1>
       </div>
+      <div class="container-xxl">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-registrarActividad">Agregar
+                Actividad</button>
+              <table id="tabla-actividades" class="table table-striped">
+                <thead class="table-success">
+                  <tr>
+                    <th>Nombre de Actividad</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Finalización</th>
+                    <th>Hora</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+
+              <!-- VENTANA MODAL PARA REGISTRAR ACTIVIDAD -->
+              <div class="modal fade" id="modal-registrarActividad" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Registra una Actividad</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form id="form-registrarActividad" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenActividad">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nombreActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-nombreActividad">Nombre de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tipoActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-tipoActividad">Tipo de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Tipo de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionActividad">Descripción de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Descripción de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaInicioActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaInicioActividad">Fecha de Inicio</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha de inicio de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaFinActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaFinActividad">Fecha de Finalización</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha de finalización de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="time" class="form-control" id="input-horaActividad"
+                            placeholder="name@example.com" required>
+                          <label for="input-horaActividad">Hora</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Hora de Actividad no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelarRegActividad"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-registrarActividad">Registrar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA REGISTRAR ACTIVIDAD -->
+
+              <!-- VENTANA MODAL PARA EDITAR ACTIVIDAD -->
+              <div class="modal fade" id="modal-editarActividad" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Editar Actividad</h5>
+                      <button class="btn-close" data-bs-dismiss="modal" id="btn-close"></button>
+                    </div>
+                    <form id="form-editarActividad" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="form-floating mb-3">
+                          <img src="" alt="" id="img-imagenActividadEditar" style="width: 100%;">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="file" id="input-imagenActividadEditar">
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-nombreActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-nombreActividadEditar">Nombre de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Nombre de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-tipoActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-tipoActividadEditar">Tipo de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Tipo de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="input-descripcionActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-descripcionActividadEditar">Descripción de Actividad</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Descripción de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaInicioActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaInicioActividadEditar">Fecha de Inicio</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha de inicio de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="date" class="form-control" id="input-fechaFinActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-fechaFinActividadEditar">Fecha de Finalización</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Fecha de finalización de Actividad no válido.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="time" class="form-control" id="input-horaActividadEditar"
+                            placeholder="name@example.com" required>
+                          <label for="input-horaActividadEditar">Hora de Finalización</label>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Hora de Actividad no válido.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-danger" id="btn-cancelar"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-editarActividad">Guardar cambios</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA EDITAR ACTIVIDAD -->
+
+              <!-- VENTANA MODAL PARA BORRAR ACTIVIDAD -->
+              <div class="modal fade" id="modal-eliminarActividad" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-scrollableº">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>¿Esta seguro de eliminar la Actividad?</h5>
+                      <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="p-actividad"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-danger" id="btn-NOeliminarActividad" data-bs-dismiss="modal">NO</button>
+                      <button type="submit" class="btn btn-success" id="btn-SIeliminarActividad">SI</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN VENTANA MODAL PARA BORRAR ACTIVIDAD -->
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main><!-- End #main -->

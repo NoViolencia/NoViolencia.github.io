@@ -1,3 +1,6 @@
+// import configuracion from './constantes.mjs';
+// const ruta = configuracion.ruta;
+const ruta = "https://render-proyecto281-backend.onrender.com/"+"api";
 document.addEventListener("DOMContentLoaded", function () {
   const formularioUsuario = document.getElementById("form-inicioSesion");
 
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Realiza una solicitud POST al backend
-    fetch("https://prueba3-281-production.up.railway.app/api/auth/login", {
+    fetch(`${ruta}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const correologin = data.data.correo;
         const id_usuario = data.data.id_usuario;
         const rol = data.data.rol;
+        const id_administrador = data.data.id_administrador;
 
         if (rol == "usuario_normal") {
           window.location.href = `index.html?correo=${correologin}&id_usuario=${id_usuario}&rol=${rol}`;
         }else{
-          window.location.href = `indexAdministrador.html?correo=${correologin}&id_usuario=${id_usuario}&rol=${rol}`;
+          window.location.href = `indexAdministrador.html?correo=${correologin}&id_usuario=${id_usuario}&rol=${rol}&id_administrador=${id_administrador}`;
         }
 
       })

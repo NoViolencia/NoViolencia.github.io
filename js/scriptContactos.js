@@ -1,9 +1,13 @@
+// import configuracion from './constantes.mjs';
+// const ruta = configuracion.ruta;
+const ruta = "https://render-proyecto281-backend.onrender.com/"+"api";
+//---------------------------------------------------------------
 const queryStringContacto = window.location.search;
 const urlParamsContacto = new URLSearchParams(queryStringContacto);
 const correoUsuario = urlParamsContacto.get('correo');
 const id_usuario = urlParamsContacto.get('id_usuario');
 const rol = urlParamsContacto.get('rol');
-if (correoUsuario != null) {
+if (correoUsuario != 'null') {
   document.getElementById('btnRegInicio').style.display = 'none';
   document.getElementById('correoUsuario').style.display = 'block';
   document.getElementById('spanCorreo').textContent = correoUsuario;
@@ -12,8 +16,6 @@ if (correoUsuario != null) {
 }
 const cerrarSesionLink = document.getElementById("cerrar_sesion");
 cerrarSesionLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  history.replaceState({}, '', 'index.html');
   window.location.href = 'index.html';
 });
 
@@ -32,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const nuevaURL = `index.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
     window.location.href = nuevaURL;
   });
-  const a_aprende = document.getElementById("a-aprende");
-  a_aprende.addEventListener("click", function(event) {
+  const a_actividad = document.getElementById("a-actividad");
+  a_actividad.addEventListener("click", function(event) {
     event.preventDefault();
-    const nuevaURL = `aprende.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
+    const nuevaURL = `actividad.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
     window.location.href = nuevaURL;
   });
   const a_recurso = document.getElementById("a-recurso");
@@ -62,13 +64,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const nuevaURL = `politica.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
     window.location.href = nuevaURL;
   });
-
+  const a_institucion = document.getElementById("a-institucion");
+  a_institucion.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nuevaURL = `instituciones.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
+    window.location.href = nuevaURL;
+  });
+  const a_perfil = document.getElementById("a-perfil");
+  a_perfil.addEventListener("click", function(event) {
+    event.preventDefault();
+    const nuevaURL = `perfil.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
+    window.location.href = nuevaURL;
+  });
   // --------------------------------------------
   const tablaContactos = document.getElementById('tabla-contactos');
   const valNombreContacto = /^[a-zA-Z\s]{3,30}$/;
   const valNumeroContacto = /^(6\d{7}|7\d{7}|2\d{6})$/;
 
-  fetch(`https://prueba3-281-production.up.railway.app/api/contacto/usuario/${id_usuario}`)
+  fetch(`${ruta}/contacto/usuario/${id_usuario}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Error al obtener los contactos');
@@ -86,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let idContacto = objeto.id_contacto;
         celdaNombreContacto.textContent = objeto.nombre_contacto;
         celdaTelefonoContacto.textContent = objeto.telefono;
+        
         //BOTON EDITAR
         const btnEditar = document.createElement('button');
         btnEditar.title = "Editar";
@@ -131,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
               telefono: numeroContactoE,
               // id_usuario: id_usuario;
             };
-            fetch(`https://prueba3-281-production.up.railway.app/api/contacto/${idContacto}/usuario/${id_usuario}`, {
+            fetch(`${ruta}/contacto/${idContacto}/usuario/${id_usuario}`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -154,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
-
         //BOTON ELIMINAR
         const btnEliminar = document.createElement('button');
         btnEliminar.title = "Eliminar";
@@ -170,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const btnSIeliminar = document.getElementById("btn-SIeliminarContacto");
           btnSIeliminar.addEventListener('click', () => {
-            fetch(`https://prueba3-281-production.up.railway.app/api/contacto/${idContacto}/usuario/${id_usuario}`, {
+            fetch(`${ruta}/contacto/${idContacto}/usuario/${id_usuario}`, {
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json",
@@ -243,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // id_usuario: id_usuario;
     };
 
-    fetch("https://prueba3-281-production.up.railway.app/api/contacto", {
+    fetch(`${ruta}/contacto`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -264,9 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(error);
       });
   });
-
-  //-------------------------------------------------------------
-  // EDITAR CONTACTO
 
 });
 

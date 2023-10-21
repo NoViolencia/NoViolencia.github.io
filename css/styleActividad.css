@@ -1,0 +1,92 @@
+.card {
+  position: absolute;
+  background-color: #fff;
+  transform-origin: bottom center;
+  transition: .5s;
+  cursor: pointer;
+  margin: 0 15px;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+.img-area{
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+  background-color: #000;
+  transition: height 0.4s;
+}
+.img-area img{
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(1);
+  max-width: 150%;
+}
+.card:hover .img-area img{
+  opacity: 0.6;
+  transform: scale(1.2);
+}
+.card:hover .img-area{
+  height: 90px;
+}
+.img-area:hover{
+  height: 240px !important;
+}
+.img-area:hover img{
+  opacity: 1 !important;
+}
+.description{
+  overflow: hidden !important;
+  position: relative;
+  padding: 20px;
+  height: 120px;
+  text-align: center;
+  transition: height0.3s;
+}
+.card:hover .description{
+  height: 330px;
+}
+.description h2{
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 22px;
+  color: #000;
+  font-weight: bold;
+}
+.description h3{
+  margin: 0;
+  padding: 0 0 10px 0;
+  color: red;
+  font-size: 19px;
+}
+.description p{
+  font-family: yatra one;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 18px;
+  line-height: 25px;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  transition-delay: 0s;
+  transform: translateY(25px);
+}
+.card:hover p{
+  opacity: 1;
+  transition-delay: 0.1s;
+  transform: translateY(0);
+}
+.botton-area{
+  position: absolute;
+  color: #fff;
+  background-color: green;
+  bottom: 0;
+  height: 30px;
+  padding: 7px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+} 
