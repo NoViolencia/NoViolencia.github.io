@@ -1,6 +1,6 @@
 // import configuracion from './constantes.mjs';
 // const ruta = configuracion.ruta;
-const ruta = "https://render-proyecto281-backend.onrender.com/"+"api";
+const ruta = "https://render-proyecto281-backend.onrender.com";
 //-------------------------------------------------
 const queryStringEvaluacion = window.location.search;
 const urlParamsEvaluacion = new URLSearchParams(queryStringEvaluacion);
