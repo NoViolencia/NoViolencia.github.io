@@ -163,6 +163,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById('img-imagenUsuarioEditar').src = objeto.Usuario.Imagen_perfil;
 
+            document.getElementById('input-imagenUsuarioEditar').addEventListener('change', function (e) {
+              const imagenSeleccionada = e.target.files[0];
+              const imagenUsuarioEditar = document.getElementById('img-imagenUsuarioEditar');
+
+              // Verifica si se seleccionó una imagen
+              if (imagenSeleccionada) {
+                const urlImagen = URL.createObjectURL(imagenSeleccionada);
+                imagenUsuarioEditar.src = urlImagen;
+              }
+            });
+
+
             const formEditarUsuario = document.getElementById("form-editarUsuario");
             formEditarUsuario.addEventListener('submit', function (event) {
               event.preventDefault();
@@ -764,6 +776,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById('img-imagenUsuarioAdministradorEditar').src = objeto.Usuario.Imagen_perfil;
 
+            document.getElementById('input-imagenUsuarioEditarAdministrador').addEventListener('change', function (e) {
+              const imagenSeleccionada = e.target.files[0];
+              const imagenUsuarioEditar = document.getElementById('img-imagenUsuarioAdministradorEditar');
+
+              // Verifica si se seleccionó una imagen
+              if (imagenSeleccionada) {
+                const urlImagen = URL.createObjectURL(imagenSeleccionada);
+                imagenUsuarioEditar.src = urlImagen;
+              }
+            });
+            
             const formEditarUsuario = document.getElementById("form-editarUsuarioAdministrador");
             formEditarUsuario.addEventListener('submit', function (event) {
               event.preventDefault();
@@ -1519,7 +1542,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       })
                       .then((data) => {
                         console.log("vista de comentario editada:", data);
-                        // window.location.href = `indexAdministrador.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
+                        window.location.href = `indexAdministrador.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
                       })
                       .catch((error) => {
                         console.error(error);
@@ -2218,7 +2241,7 @@ document.addEventListener("DOMContentLoaded", function () {
           celdaFechaFinActividad.textContent = fechaFormateada;
 
           const fecha = new Date(objeto.hora);
-          const horas = fecha.getHours();
+          const horas = fecha.getUTCHours();
           const minutos = fecha.getMinutes();
           const horaFormateada = horas.toString().padStart(2, '0');
           const minutosFormateados = minutos.toString().padStart(2, '0');
@@ -2608,5 +2631,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         console.error(error);
       });
+      
   });
 });

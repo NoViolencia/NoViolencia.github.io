@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         div_card.classList.add('card');
         img_actividad.classList.add('card-img-top', 'w-100');
         // img_actividad.classList.add('img-fluid');
-        div_intro.classList.add('card-body', 'h-75');
+        div_intro.classList.add('card-body');
         h3_titulo.classList.add('card-title');
         h5_tipo.classList.add('card-title');
         p_descripcion.classList.add('card-text');
@@ -149,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
         div_intro.style.color = 'black';
         div_intro.style.opacity = '0.85';
         div_intro.style.transition = '0.5s';
+        div_intro.style.height = '300px'; // Haz que div_intro ocupe todo el alto
+        div_intro.style.overflow = 'auto';
 
         p_descripcion.style.margin = '0px';
         p_fechaIni.style.margin = '0px';
@@ -164,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         div_hora.style.display = 'flex';
 
         div_intro.addEventListener('mouseenter', function () {
-          div_intro.style.top = '155px';
+          div_intro.style.top = '110px';
         });
         div_intro.addEventListener('mouseleave', function () {
           div_intro.style.top = '260px';
