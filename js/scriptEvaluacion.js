@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
     // --------------------------------------------
   //test -1 ----------------------------------------
   const botonEnviar=document.getElementById("form-test");
@@ -339,10 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
           window.location.href = `evaluacion.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}`;
         })    
     });
-    //fin del test-2 ----------------------------------------
-
-  
-
+    //fin del test -2
 
 
 
