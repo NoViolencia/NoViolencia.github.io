@@ -204,72 +204,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-              if (!valCiUsuario.test(ciUsuarioE)) {
-                document.getElementById("input-ciUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-ciUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-ciUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valNombreUsuario.test(nomUsuarioE)) {
-                document.getElementById("input-nomUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-nomUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-nomUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              const fechaActualEditar = new Date();
-              const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
-              if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
-                document.getElementById("input-fechaUsuarioEditar").classList.add("is-invalid");
-                document.getElementById("input-fechaUsuarioEditar").scrollIntoView({ behavior: "smooth" });
-                setTimeout(function () {
-                  document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valDireccionUsuario.test(direccionUsuarioE)) {
-                document.getElementById("input-direccionUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-direccionUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-direccionUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valCorreoUsuario.test(correoUsuarioE)) {
-                document.getElementById("input-correoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-correoUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-correoUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
-                document.getElementById("input-telefonoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-telefonoUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-telefonoUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valUsuarioUsuario.test(userUsuarioE)) {
-                document.getElementById("input-userUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-userUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-userUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valContraseniaUsuario.test(paswordUsuarioE)) {
-                document.getElementById("input-passwordUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-passwordUsuarioEditar").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-passwordUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
+              // if (!valCiUsuario.test(ciUsuarioE)) {
+              //   document.getElementById("input-ciUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-ciUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-ciUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valNombreUsuario.test(nomUsuarioE)) {
+              //   document.getElementById("input-nomUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-nomUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-nomUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // const fechaActualEditar = new Date();
+              // const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
+              // if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
+              //   document.getElementById("input-fechaUsuarioEditar").classList.add("is-invalid");
+              //   document.getElementById("input-fechaUsuarioEditar").scrollIntoView({ behavior: "smooth" });
+              //   setTimeout(function () {
+              //     document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valDireccionUsuario.test(direccionUsuarioE)) {
+              //   document.getElementById("input-direccionUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-direccionUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-direccionUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valCorreoUsuario.test(correoUsuarioE)) {
+              //   document.getElementById("input-correoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-correoUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-correoUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
+              //   document.getElementById("input-telefonoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-telefonoUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-telefonoUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valUsuarioUsuario.test(userUsuarioE)) {
+              //   document.getElementById("input-userUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-userUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-userUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valContraseniaUsuario.test(paswordUsuarioE)) {
+              //   document.getElementById("input-passwordUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-passwordUsuarioEditar").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-passwordUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+
               const usuarioEditado = {
                 ci: ciUsuarioE,
                 nombre: nomUsuarioE,
@@ -544,72 +545,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const contrasenia = document.getElementById("input-passwordUsuario").value;
 
-      if (!valNombreUsuario.test(document.getElementById("input-nomUsuario").value)) {
-        document.getElementById("input-nomUsuario").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-        document.getElementById("input-nomUsuario").classList.add("is-invalid");
-        setTimeout(function () {
-          document.getElementById("input-nomUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valCiUsuario.test(document.getElementById("input-ciUsuario").value)) {
-        document.getElementById("input-ciUsuario").classList.add("is-invalid");
-        document.getElementById("input-ciUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-ciUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      const fechaActual = new Date();
-      const edad = fechaActual.getFullYear() - valFechaNacUsuario.getFullYear();
-      if (edad < 18 || (edad === 18 && (valFechaNacUsuario.getMonth() > fechaActual.getMonth() || (valFechaNacUsuario.getMonth() === fechaActual.getMonth() && valFechaNacUsuario.getDate() > fechaActual.getDate())))) {
-        document.getElementById("input-fechaUsuario").classList.add("is-invalid");
-        document.getElementById("input-fechaUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-fechaUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valDireccionUsuario.test(document.getElementById("input-direccionUsuario").value)) {
-        document.getElementById("input-direccionUsuario").classList.add("is-invalid");
-        document.getElementById("input-direccionUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-direccionUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valCorreoUsuario.test(document.getElementById("input-correoUsuario").value)) {
-        document.getElementById("input-correoUsuario").classList.add("is-invalid");
-        document.getElementById("input-correoUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-correoUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valTelefonoUsuario.test(document.getElementById("input-telefonoUsuario").value)) {
-        document.getElementById("input-telefonoUsuario").classList.add("is-invalid");
-        document.getElementById("input-telefonoUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-telefonoUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valUsuarioUsuario.test(document.getElementById("input-userUsuario").value)) {
-        document.getElementById("input-userUsuario").classList.add("is-invalid");
-        document.getElementById("input-userUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-userUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valContraseniaUsuario.test(document.getElementById("input-passwordUsuario").value)) {
-        document.getElementById("input-passwordUsuario").classList.add("is-invalid");
-        document.getElementById("input-passwordUsuario").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-passwordUsuario").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
+      // if (!valNombreUsuario.test(document.getElementById("input-nomUsuario").value)) {
+      //   document.getElementById("input-nomUsuario").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+      //   document.getElementById("input-nomUsuario").classList.add("is-invalid");
+      //   setTimeout(function () {
+      //     document.getElementById("input-nomUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valCiUsuario.test(document.getElementById("input-ciUsuario").value)) {
+      //   document.getElementById("input-ciUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-ciUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-ciUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // const fechaActual = new Date();
+      // const edad = fechaActual.getFullYear() - valFechaNacUsuario.getFullYear();
+      // if (edad < 18 || (edad === 18 && (valFechaNacUsuario.getMonth() > fechaActual.getMonth() || (valFechaNacUsuario.getMonth() === fechaActual.getMonth() && valFechaNacUsuario.getDate() > fechaActual.getDate())))) {
+      //   document.getElementById("input-fechaUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-fechaUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-fechaUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valDireccionUsuario.test(document.getElementById("input-direccionUsuario").value)) {
+      //   document.getElementById("input-direccionUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-direccionUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-direccionUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valCorreoUsuario.test(document.getElementById("input-correoUsuario").value)) {
+      //   document.getElementById("input-correoUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-correoUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-correoUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valTelefonoUsuario.test(document.getElementById("input-telefonoUsuario").value)) {
+      //   document.getElementById("input-telefonoUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-telefonoUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-telefonoUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valUsuarioUsuario.test(document.getElementById("input-userUsuario").value)) {
+      //   document.getElementById("input-userUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-userUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-userUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valContraseniaUsuario.test(document.getElementById("input-passwordUsuario").value)) {
+      //   document.getElementById("input-passwordUsuario").classList.add("is-invalid");
+      //   document.getElementById("input-passwordUsuario").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-passwordUsuario").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+
       //----------------------------------------------------------------------------------
 
 
@@ -813,75 +815,75 @@ document.addEventListener("DOMContentLoaded", function () {
               const userUsuarioE = document.getElementById("input-userUsuarioEditarAdministrador").value;
               const paswordUsuarioE = document.getElementById("input-passwordUsuarioEditarAdministrador").value;
 
-              if (!valCiUsuario.test(ciUsuarioE)) {
-                document.getElementById("input-ciUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-ciUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-ciUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valNombreUsuario.test(nomUsuarioE)) {
-                document.getElementById("input-nomUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-nomUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-nomUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
+              // if (!valCiUsuario.test(ciUsuarioE)) {
+              //   document.getElementById("input-ciUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-ciUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-ciUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valNombreUsuario.test(nomUsuarioE)) {
+              //   document.getElementById("input-nomUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-nomUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-nomUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
 
-              const fechaActualEditar = new Date();
-              const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
-              if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
-                document.getElementById("input-fechaUsuarioEditarAdministrador").classList.add("is-invalid");
-                document.getElementById("input-fechaUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth" });
-                setTimeout(function () {
-                  document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
+              // const fechaActualEditar = new Date();
+              // const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
+              // if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
+              //   document.getElementById("input-fechaUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   document.getElementById("input-fechaUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth" });
+              //   setTimeout(function () {
+              //     document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
 
 
-              if (!valDireccionUsuario.test(direccionUsuarioE)) {
-                document.getElementById("input-direccionUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-direccionUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-direccionUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valCorreoUsuario.test(correoUsuarioE)) {
-                document.getElementById("input-correoUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-correoUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-correoUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
-                document.getElementById("input-telefonoUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-telefonoUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-telefonoUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valUsuarioUsuario.test(userUsuarioE)) {
-                document.getElementById("input-userUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-userUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-userUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
-              if (!valContraseniaUsuario.test(paswordUsuarioE)) {
-                document.getElementById("input-passwordUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-                document.getElementById("input-passwordUsuarioEditarAdministrador").classList.add("is-invalid");
-                setTimeout(function () {
-                  document.getElementById("input-passwordUsuarioEditarAdministrador").classList.remove("is-invalid");
-                }, 30000);
-                return;
-              }
+              // if (!valDireccionUsuario.test(direccionUsuarioE)) {
+              //   document.getElementById("input-direccionUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-direccionUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-direccionUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valCorreoUsuario.test(correoUsuarioE)) {
+              //   document.getElementById("input-correoUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-correoUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-correoUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
+              //   document.getElementById("input-telefonoUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-telefonoUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-telefonoUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valUsuarioUsuario.test(userUsuarioE)) {
+              //   document.getElementById("input-userUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-userUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-userUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
+              // if (!valContraseniaUsuario.test(paswordUsuarioE)) {
+              //   document.getElementById("input-passwordUsuarioEditarAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+              //   document.getElementById("input-passwordUsuarioEditarAdministrador").classList.add("is-invalid");
+              //   setTimeout(function () {
+              //     document.getElementById("input-passwordUsuarioEditarAdministrador").classList.remove("is-invalid");
+              //   }, 30000);
+              //   return;
+              // }
 
               const input_imagenUsuarioAdministradorEditar = document.getElementById('input-imagenUsuarioEditarAdministrador');
               const archivoImagenUsuarioAdministradorEditar = input_imagenUsuarioAdministradorEditar.files[0];
@@ -1093,72 +1095,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const contrasenia = document.getElementById("input-passwordUsuarioAdministrador").value;
 
-      if (!valNombreUsuario.test(document.getElementById("input-nomUsuarioAdministrador").value)) {
-        document.getElementById("input-nomUsuarioAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-        document.getElementById("input-nomUsuarioAdministrador").classList.add("is-invalid");
-        setTimeout(function () {
-          document.getElementById("input-nomUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valCiUsuario.test(document.getElementById("input-ciUsuarioAdministrador").value)) {
-        document.getElementById("input-ciUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-ciUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-ciUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      const fechaActual = new Date();
-      const edad = fechaActual.getFullYear() - valFechaNacUsuario.getFullYear();
-      if (edad < 18 || (edad === 18 && (valFechaNacUsuario.getMonth() > fechaActual.getMonth() || (valFechaNacUsuario.getMonth() === fechaActual.getMonth() && valFechaNacUsuario.getDate() > fechaActual.getDate())))) {
-        document.getElementById("input-fechaUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-fechaUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-fechaUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valDireccionUsuario.test(document.getElementById("input-direccionUsuarioAdministrador").value)) {
-        document.getElementById("input-direccionUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-direccionUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-direccionUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valCorreoUsuario.test(document.getElementById("input-correoUsuarioAdministrador").value)) {
-        document.getElementById("input-correoUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-correoUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-correoUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valTelefonoUsuario.test(document.getElementById("input-telefonoUsuarioAdministrador").value)) {
-        document.getElementById("input-telefonoUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-telefonoUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-telefonoUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valUsuarioUsuario.test(document.getElementById("input-userUsuarioAdministrador").value)) {
-        document.getElementById("input-userUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-userUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-userUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
-      if (!valContraseniaUsuario.test(document.getElementById("input-passwordUsuarioAdministrador").value)) {
-        document.getElementById("input-passwordUsuarioAdministrador").classList.add("is-invalid");
-        document.getElementById("input-passwordUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
-        setTimeout(function () {
-          document.getElementById("input-passwordUsuarioAdministrador").classList.remove("is-invalid");
-        }, 30000);
-        return;
-      }
+      // if (!valNombreUsuario.test(document.getElementById("input-nomUsuarioAdministrador").value)) {
+      //   document.getElementById("input-nomUsuarioAdministrador").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+      //   document.getElementById("input-nomUsuarioAdministrador").classList.add("is-invalid");
+      //   setTimeout(function () {
+      //     document.getElementById("input-nomUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valCiUsuario.test(document.getElementById("input-ciUsuarioAdministrador").value)) {
+      //   document.getElementById("input-ciUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-ciUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-ciUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // const fechaActual = new Date();
+      // const edad = fechaActual.getFullYear() - valFechaNacUsuario.getFullYear();
+      // if (edad < 18 || (edad === 18 && (valFechaNacUsuario.getMonth() > fechaActual.getMonth() || (valFechaNacUsuario.getMonth() === fechaActual.getMonth() && valFechaNacUsuario.getDate() > fechaActual.getDate())))) {
+      //   document.getElementById("input-fechaUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-fechaUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-fechaUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valDireccionUsuario.test(document.getElementById("input-direccionUsuarioAdministrador").value)) {
+      //   document.getElementById("input-direccionUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-direccionUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-direccionUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valCorreoUsuario.test(document.getElementById("input-correoUsuarioAdministrador").value)) {
+      //   document.getElementById("input-correoUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-correoUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-correoUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valTelefonoUsuario.test(document.getElementById("input-telefonoUsuarioAdministrador").value)) {
+      //   document.getElementById("input-telefonoUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-telefonoUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-telefonoUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valUsuarioUsuario.test(document.getElementById("input-userUsuarioAdministrador").value)) {
+      //   document.getElementById("input-userUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-userUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-userUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
+      // if (!valContraseniaUsuario.test(document.getElementById("input-passwordUsuarioAdministrador").value)) {
+      //   document.getElementById("input-passwordUsuarioAdministrador").classList.add("is-invalid");
+      //   document.getElementById("input-passwordUsuarioAdministrador").scrollIntoView({ behavior: "smooth" });
+      //   setTimeout(function () {
+      //     document.getElementById("input-passwordUsuarioAdministrador").classList.remove("is-invalid");
+      //   }, 30000);
+      //   return;
+      // }
 
 
       const input_imagenUsuarioAdministrador = document.getElementById('input-imagenUsuarioAdministrador');
@@ -1641,7 +1643,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           console.log("Recursos registrada:", data);
-          // window.location.href = `indexAdministrador.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}&id_administrador=${id_admin}`;
+          window.location.href = `indexAdministrador.html?correo=${correoUsuario}&id_usuario=${id_usuario}&rol=${rol}&id_administrador=${id_admin}`;
         })
         .catch((error) => {
           console.error(error);

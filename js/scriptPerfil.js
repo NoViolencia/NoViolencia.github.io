@@ -194,72 +194,73 @@ document.addEventListener("DOMContentLoaded", function () {
           const telefonoUsuarioE = document.getElementById("input-telefonoUsuarioEditar").value;
           const userUsuarioE = document.getElementById("input-userUsuarioEditar").value;
           const paswordUsuarioE = document.getElementById("input-passwordUsuarioEditar").value;
-          if (!valCiUsuario.test(ciUsuarioE)) {
-            document.getElementById("input-ciUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-ciUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-ciUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valNombreUsuario.test(nomUsuarioE)) {
-            document.getElementById("input-nomUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-nomUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-nomUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          const fechaActualEditar = new Date();
-          const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
-          if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
-            document.getElementById("input-fechaUsuarioEditar").classList.add("is-invalid");
-            document.getElementById("input-fechaUsuarioEditar").scrollIntoView({ behavior: "smooth" });
-            setTimeout(function () {
-              document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valDireccionUsuario.test(direccionUsuarioE)) {
-            document.getElementById("input-direccionUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-direccionUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-direccionUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valCorreoUsuario.test(correoUsuarioE)) {
-            document.getElementById("input-correoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-correoUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-correoUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
-            document.getElementById("input-telefonoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-telefonoUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-telefonoUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valUsuarioUsuario.test(userUsuarioE)) {
-            document.getElementById("input-userUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-userUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-userUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
-          if (!valContraseniaUsuario.test(paswordUsuarioE)) {
-            document.getElementById("input-passwordUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-            document.getElementById("input-passwordUsuarioEditar").classList.add("is-invalid");
-            setTimeout(function () {
-              document.getElementById("input-passwordUsuarioEditar").classList.remove("is-invalid");
-            }, 30000);
-            return;
-          }
+
+          // if (!valCiUsuario.test(ciUsuarioE)) {
+          //   document.getElementById("input-ciUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-ciUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-ciUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valNombreUsuario.test(nomUsuarioE)) {
+          //   document.getElementById("input-nomUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-nomUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-nomUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // const fechaActualEditar = new Date();
+          // const edadEditar = fechaActualEditar.getFullYear() - valFechaNacUsuario.getFullYear();
+          // if (edadEditar < 18 || (edadEditar === 18 && (valFechaNacUsuario.getMonth() > fechaActualEditar.getMonth() || (valFechaNacUsuario.getMonth() === fechaActualEditar.getMonth() && valFechaNacUsuario.getDate() > fechaActualEditar.getDate())))) {
+          //   document.getElementById("input-fechaUsuarioEditar").classList.add("is-invalid");
+          //   document.getElementById("input-fechaUsuarioEditar").scrollIntoView({ behavior: "smooth" });
+          //   setTimeout(function () {
+          //     document.getElementById("input-fechaUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valDireccionUsuario.test(direccionUsuarioE)) {
+          //   document.getElementById("input-direccionUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-direccionUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-direccionUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valCorreoUsuario.test(correoUsuarioE)) {
+          //   document.getElementById("input-correoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-correoUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-correoUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valTelefonoUsuario.test(telefonoUsuarioE)) {
+          //   document.getElementById("input-telefonoUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-telefonoUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-telefonoUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valUsuarioUsuario.test(userUsuarioE)) {
+          //   document.getElementById("input-userUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-userUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-userUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
+          // if (!valContraseniaUsuario.test(paswordUsuarioE)) {
+          //   document.getElementById("input-passwordUsuarioEditar").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          //   document.getElementById("input-passwordUsuarioEditar").classList.add("is-invalid");
+          //   setTimeout(function () {
+          //     document.getElementById("input-passwordUsuarioEditar").classList.remove("is-invalid");
+          //   }, 30000);
+          //   return;
+          // }
 
           const input_imagenPerfil = document.getElementById('input-imagenPerfil');
           const archivoImagenPerfil = input_imagenPerfil.files[0];
@@ -471,22 +472,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombreContacto = document.getElementById("input-nomContacto").value;
     const numeroContacto = document.getElementById("input-numContacto").value;
 
-    if (!valNombreContacto.test(nombreContacto)) {
-      document.getElementById("input-nomContacto").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-      document.getElementById("input-nomContacto").classList.add("is-invalid");
-      setTimeout(function () {
-        document.getElementById("input-nomContacto").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valNumeroContacto.test(numeroContacto)) {
-      document.getElementById("input-numContacto").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-      document.getElementById("input-numContacto").classList.add("is-invalid");
-      setTimeout(function () {
-        document.getElementById("input-numContacto").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
+    // if (!valNombreContacto.test(nombreContacto)) {
+    //   document.getElementById("input-nomContacto").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    //   document.getElementById("input-nomContacto").classList.add("is-invalid");
+    //   setTimeout(function () {
+    //     document.getElementById("input-nomContacto").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valNumeroContacto.test(numeroContacto)) {
+    //   document.getElementById("input-numContacto").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    //   document.getElementById("input-numContacto").classList.add("is-invalid");
+    //   setTimeout(function () {
+    //     document.getElementById("input-numContacto").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
 
     // Creando un objeto
     const nuevoContacto = {

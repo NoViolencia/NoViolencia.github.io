@@ -20,8 +20,6 @@ cerrarSesionLink.addEventListener("click", function (event) {
 });
 
 // -------------------------------------------------------------
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const h1_nomasviolencia = document.getElementById("h1-nomasviolencia");
   h1_nomasviolencia.addEventListener("click", function(event) {
@@ -157,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
         divcard.addEventListener('mouseleave', function () {
           imgInst.style.transform = 'scale(1)';
         });
-
 
         // Armando el árbol
         divcardbody.appendChild(h5titulo);

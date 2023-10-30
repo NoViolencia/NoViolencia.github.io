@@ -289,18 +289,18 @@ document.addEventListener("DOMContentLoaded", function() {
   
       if(pnj>8){
           alert("puntaje mayor a 10");
-          nivelRiesgo="muy agresivo";
-          recomiend="es muy urgente que busque ayuda por su nivel de agresividad, pongase en contacto con nosotros o nuestras instituciones ayuda";
+          nivelRiesgo="vioelncia alta";
+          recomiend="Busca ayuda profesional: Comunícate con organizaciones de apoyo a las víctimas de violencia, como refugios para mujeres maltratadas, líneas de ayuda, terapeutas, consejeros o abogados especializados en violencia doméstica. Ellos pueden brindarte apoyo emocional y asesoramiento legal.";
       }
       if(pnj<8 & pnj>4){
           alert("puntaje medio");
-          nivelRiesgo="un poco agresivo";
-          recomiend="Busque ayuda por su nivel de agresividad, busque un poco de ayuda en las instituciones de ayuda que le proporcionamos";
+          nivelRiesgo="violencia media";
+          recomiend="Busca apoyo emocional: Habla con amigos, familiares o consejeros de confianza sobre lo que estás experimentando. Compartir tus sentimientos y experiencias puede ser un paso importante para el apoyo emocional.";
       }
       if(pnj<4 && pnj>0){
           alert("puntaje menor")
-          nivelRiesgo="nada agresivo";
-          recomiend="su nivel de agresividad es muy leve , es una persona ejemplar";
+          nivelRiesgo="violencia baja";
+          recomiend="Busca recursos de resolución de conflictos: Investiga técnicas y estrategias de resolución de conflictos que puedan ayudarte a manejar situaciones difíciles de manera más efectiva.";
       }
       console.log("salio con puntaje: " +pnj);
   

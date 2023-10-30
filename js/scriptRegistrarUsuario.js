@@ -4,53 +4,53 @@ const ruta = "https://render-proyecto281-backend.onrender.com/" + "api";
 //-----------------------------------------------------------
 // --------------------------------------------------------------------
 const h1_nomasviolencia = document.getElementById("h1-nomasviolencia");
-  h1_nomasviolencia.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `index.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_inicio = document.getElementById("a-inicio");
-  a_inicio.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `index.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_actividad = document.getElementById("a-actividad");
-  a_actividad.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `actividad.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_recurso = document.getElementById("a-recurso");
-  a_recurso.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `recurso.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_denunciaPublica = document.getElementById("a-denunciaPublica");
-  a_denunciaPublica.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `denunciaPublica.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_instituciones = document.getElementById("a-institucion");
-  a_instituciones.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `instituciones.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_evaluacion = document.getElementById("a-evaluacion");
-  a_evaluacion.addEventListener("click", function (event) {
-    event.preventDefault();
-    const nuevaURL = `evaluacion.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
-  const a_politica = document.getElementById("a-politica");
-  a_politica.addEventListener("click", function(event) {
-    event.preventDefault();
-    const nuevaURL = `politica.html?correo=null`;
-    window.location.href = nuevaURL;
-  });
+h1_nomasviolencia.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `index.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_inicio = document.getElementById("a-inicio");
+a_inicio.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `index.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_actividad = document.getElementById("a-actividad");
+a_actividad.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `actividad.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_recurso = document.getElementById("a-recurso");
+a_recurso.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `recurso.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_denunciaPublica = document.getElementById("a-denunciaPublica");
+a_denunciaPublica.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `denunciaPublica.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_instituciones = document.getElementById("a-institucion");
+a_instituciones.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `instituciones.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_evaluacion = document.getElementById("a-evaluacion");
+a_evaluacion.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `evaluacion.html?correo=null`;
+  window.location.href = nuevaURL;
+});
+const a_politica = document.getElementById("a-politica");
+a_politica.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nuevaURL = `politica.html?correo=null`;
+  window.location.href = nuevaURL;
+});
 // --------------------------------------------------------------------
 document.getElementById('a-terminos').addEventListener('click', (event) => {
   event.preventDefault();
@@ -100,92 +100,89 @@ document.addEventListener("DOMContentLoaded", function () {
     const valUsuario = /^[a-zA-Z\s]{3,30}$/;
     const valContrasenia = /^.{4,}$/;
 
-    if (!valNombre.test(document.getElementById("nombre").value)) {
-      document.getElementById("nombre").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-      document.getElementById("nombre").classList.add("is-invalid");
-      setTimeout(function () {
-        document.getElementById("nombre").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valApPaterno.test(document.getElementById("apePaterno").value)) {
-      document.getElementById("apePaterno").scrollIntoView({ behavior: "smooth" });
-      document.getElementById("apePaterno").classList.add("is-invalid");
-      setTimeout(function () {
-        document.getElementById("apePaterno").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valApMaterno.test(document.getElementById("apeMaterno").value)) {
-      document.getElementById("apeMaterno").classList.add("is-invalid");
-      document.getElementById("apeMaterno").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("apeMaterno").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valCi.test(document.getElementById("ci").value)) {
-      document.getElementById("ci").classList.add("is-invalid");
-      document.getElementById("ci").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("ci").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    const fechaActual = new Date();
-    const edad = fechaActual.getFullYear() - valFechaNac.getFullYear();
-    console.log(typeof edad);
-    console.log(fechaActual);
-    console.log(valFechaNac);
-    console.log(edad);
-    if (edad < 18 || (edad === 18 && (valFechaNac.getMonth() > fechaActual.getMonth() || (valFechaNac.getMonth() === fechaActual.getMonth() && valFechaNac.getDate() > fechaActual.getDate())))) {
-      document.getElementById("fecha_nac").classList.add("is-invalid");
-      document.getElementById("fecha_nac").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("fecha_nac").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valDireccion.test(document.getElementById("direccion").value)) {
-      document.getElementById("direccion").classList.add("is-invalid");
-      document.getElementById("direccion").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("direccion").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valCorreo.test(document.getElementById("correo").value)) {
-      document.getElementById("correo").classList.add("is-invalid");
-      document.getElementById("correo").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("correo").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valTelefono.test(document.getElementById("telefono").value)) {
-      document.getElementById("telefono").classList.add("is-invalid");
-      document.getElementById("telefono").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("telefono").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valUsuario.test(document.getElementById("nombre_usuario").value)) {
-      document.getElementById("nombre_usuario").classList.add("is-invalid");
-      document.getElementById("nombre_usuario").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("nombre_usuario").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
-    if (!valContrasenia.test(document.getElementById("contrasenia").value)) {
-      document.getElementById("contrasenia").classList.add("is-invalid");
-      document.getElementById("contrasenia").scrollIntoView({ behavior: "smooth" });
-      setTimeout(function () {
-        document.getElementById("contrasenia").classList.remove("is-invalid");
-      }, 30000);
-      return;
-    }
+    // if (!valNombre.test(document.getElementById("nombre").value)) {
+    //   document.getElementById("nombre").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    //   document.getElementById("nombre").classList.add("is-invalid");
+    //   setTimeout(function () {
+    //     document.getElementById("nombre").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valApPaterno.test(document.getElementById("apePaterno").value)) {
+    //   document.getElementById("apePaterno").scrollIntoView({ behavior: "smooth" });
+    //   document.getElementById("apePaterno").classList.add("is-invalid");
+    //   setTimeout(function () {
+    //     document.getElementById("apePaterno").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valApMaterno.test(document.getElementById("apeMaterno").value)) {
+    //   document.getElementById("apeMaterno").classList.add("is-invalid");
+    //   document.getElementById("apeMaterno").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("apeMaterno").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valCi.test(document.getElementById("ci").value)) {
+    //   document.getElementById("ci").classList.add("is-invalid");
+    //   document.getElementById("ci").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("ci").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // const fechaActual = new Date();
+    // const edad = fechaActual.getFullYear() - valFechaNac.getFullYear();
+    // if (edad < 18 || (edad === 18 && (valFechaNac.getMonth() > fechaActual.getMonth() || (valFechaNac.getMonth() === fechaActual.getMonth() && valFechaNac.getDate() > fechaActual.getDate())))) {
+    //   document.getElementById("fecha_nac").classList.add("is-invalid");
+    //   document.getElementById("fecha_nac").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("fecha_nac").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valDireccion.test(document.getElementById("direccion").value)) {
+    //   document.getElementById("direccion").classList.add("is-invalid");
+    //   document.getElementById("direccion").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("direccion").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valCorreo.test(document.getElementById("correo").value)) {
+    //   document.getElementById("correo").classList.add("is-invalid");
+    //   document.getElementById("correo").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("correo").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valTelefono.test(document.getElementById("telefono").value)) {
+    //   document.getElementById("telefono").classList.add("is-invalid");
+    //   document.getElementById("telefono").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("telefono").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valUsuario.test(document.getElementById("nombre_usuario").value)) {
+    //   document.getElementById("nombre_usuario").classList.add("is-invalid");
+    //   document.getElementById("nombre_usuario").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("nombre_usuario").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+    // if (!valContrasenia.test(document.getElementById("contrasenia").value)) {
+    //   document.getElementById("contrasenia").classList.add("is-invalid");
+    //   document.getElementById("contrasenia").scrollIntoView({ behavior: "smooth" });
+    //   setTimeout(function () {
+    //     document.getElementById("contrasenia").classList.remove("is-invalid");
+    //   }, 30000);
+    //   return;
+    // }
+
 
     if (contrasenia != repitaContrasenia) {
       document.getElementById("errorContrasenia").style.display = "block";
@@ -198,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //----------------------------------------------------------------------------------
 
-    
+
 
 
 

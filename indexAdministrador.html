@@ -359,7 +359,7 @@
                     <form id="form-registrarUsuario" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3">
-                          <input type="file" id="input-imagenUsuario">
+                          <input type="file" id="input-imagenUsuario" required>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="input-ciUsuario" placeholder="name@example.com"
@@ -476,7 +476,7 @@
                     <form id="form-editarUsuario" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3 text-center">
-                          <img class="rounded-circle" src="" alt="" id="img-imagenUsuarioEditar" style="width: 50%;">
+                          <img class="rounded-circle" src="" alt="" id="img-imagenUsuarioEditar" style="max-width: 200px; max-height: 200px; min-width: 200px; min-height: 200px;">
                         </div>
                         <div class="form-floating mb-3">
                           <input type="file" id="input-imagenUsuarioEditar">
@@ -660,7 +660,7 @@
                     <form id="form-registrarUsuarioAdministrador" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3">
-                          <input type="file" id="input-imagenUsuarioAdministrador">
+                          <input type="file" id="input-imagenUsuarioAdministrador" required>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="input-ciUsuarioAdministrador"
@@ -778,7 +778,7 @@
                     <form id="form-editarUsuarioAdministrador" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3 text-center">
-                          <img class="rounded-circle" id="img-imagenUsuarioAdministradorEditar" alt="" style="width: 50%;">
+                          <img class="rounded-circle" id="img-imagenUsuarioAdministradorEditar" alt="" img-imagenUsuarioEditar" style="max-width: 200px; max-height: 200px; min-width: 200px; min-height: 200px;">
                         </div>
                         <div class="form-floating mb-3">
                           <input type="file" id="input-imagenUsuarioEditarAdministrador">
@@ -963,7 +963,7 @@
                     <form id="form-registrarRecursos" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3">
-                          <input type="file" id="input-imagenRecursos" multiple="" name="image">
+                          <input type="file" id="input-imagenRecursos" multiple="" name="image" required>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="input-tituloRecursos"
@@ -1204,7 +1204,7 @@
                     <form id="form-registrarInstitución" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3">
-                          <input type="file" id="input-imagenInstitucion">
+                          <input type="file" id="input-imagenInstitucion" required>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="input-nombreInstitucion"
@@ -1452,7 +1452,7 @@
                     <form id="form-registrarActividad" method="POST" enctype="multipart/form-data">
                       <div class="modal-body">
                         <div class="form-floating mb-3">
-                          <input type="file" id="input-imagenActividad">
+                          <input type="file" id="input-imagenActividad" required>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="input-nombreActividad"

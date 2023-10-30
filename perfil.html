@@ -193,7 +193,8 @@
                       <input type="file" class="form-control" id="input-imagenPerfil" accept="image/*">
                     </div>
                     <div class="form-floating col-md-3 m-3">
-                      <img class="rounded-circle" id="img-usuarioPerfilEditar" style="max-width: 80px; max-height: 80px; min-width: 80px; min-height: 80px;">
+                      <img class="rounded-circle" id="img-usuarioPerfilEditar"
+                        style="max-width: 80px; max-height: 80px; min-width: 80px; min-height: 80px;">
                     </div>
                   </div>
                   <div class="form-floating mb-3">
@@ -710,10 +711,14 @@
     <div class="container py-5">
       <div class="row g-5">
         <div class="col-md-6 col-lg-3">
-          <h5 class="text-white mb-4">Contactanos</h5>
+          <h5 class="text-white mb-4">Contáctanos</h5>
           <p><i class="fa fa-map-marker-alt me-3"></i>Umsa,La Paz, Bolivia</p>
-          <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-          <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+          <p><i class="fa fa-phone-alt me-3"></i>+591 67344498</p>
+          <p><i class="fa fa-envelope me-3"></i>nomasviolencia@gmail.com</p>
+          <!-- <p><i class="fa fa-envelope me-3"></i>rodrigo@gmail.com</p>
+       <p><i class="fa fa-envelope me-3"></i>eleazar@gmail.com</p>
+       <p><i class="fa fa-envelope me-3"></i>gustavo@gmail.com</p>
+       <p><i class="fa fa-envelope me-3"></i>roberto@gmail.com</p> -->
           <div class="d-flex pt-2">
             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -724,16 +729,15 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <h5 class="text-white mb-4">Acerca de Nosotros</h5>
-          <a class="btn btn-link" href="">Quienes somos</a>
-          <a class="btn btn-link" href="">Mision</a>
-          <a class="btn btn-link" href="">Vision</a>
-          <a class="btn btn-link" href="">Politicas de Privacidad</a>
+          <a class="btn btn-link" href="#div-informacion">Quienes somos</a>
+          <a class="btn btn-link" href="#div-informacion">Mision</a>
+          <a class="btn btn-link" href="#div-informacion">Vision</a>
 
         </div>
         <div class="col-md-6 col-lg-3">
           <h5 class="text-white mb-4">Descarga La App</h5>
-          <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-            vulpu</p>
+          <!-- <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+         vulpu</p> -->
           <div class="position-relative w-100 mt-3">
             <div class="brand__name"><button type="button" class="btn btn-outline-light">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -749,11 +753,11 @@
         </div>
         <div class="col-md-6 col-lg-3">
           <h5 class="text-white mb-4">Consultas?</h5>
-          <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-            vulpu</p>
+          <!-- <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+         vulpu</p> -->
           <div class="position-relative w-100 mt-3">
             <div class="brand__name">
-              <a href="https://chatbotsara.org/" type="button" class="btn btn-outline-light">
+              <a href="https://chatbotsara.org/" type="button" class="btn btn-outline-light" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wechat"
                   viewBox="0 0 16 16">
                   <path
@@ -764,6 +768,18 @@
                 Chat Bot
               </a>
             </div>
+            <div class="correos" style="display: none; transform: translateY(50px);">
+              <i class="fa fa-envelope"></i> <span style="margin-right: 10px;">cristhian@gmail.com</span><i
+                class="fa fa-phone-alt" style="margin-right: 5px;"></i><span>67344498</span><br>
+              <i class="fa fa-envelope"></i> <span style="margin-right: 10px;">rodrigo@gmail.com</span><i
+                class="fa fa-phone-alt" style="margin-right: 5px;"></i><span>76279697</span><br>
+              <i class="fa fa-envelope"></i> <span style="margin-right: 10px;">eleazar@gmail.com</span><i
+                class="fa fa-phone-alt" style="margin-right: 5px;"></i><span>75818739</span><br>
+              <i class="fa fa-envelope"></i> <span style="margin-right: 10px;">roberto@gmail.com</span><i
+                class="fa fa-phone-alt" style="margin-right: 5px;"></i><span>75267079</span><br>
+              <i class="fa fa-envelope"></i> <span style="margin-right: 10px;">gustavo@gmail.com</span><i
+                class="fa fa-phone-alt" style="margin-right: 5px;"></i><span>77778054</span>
+            </div>
           </div>
         </div>
       </div>
@@ -772,16 +788,10 @@
       <div class="copyright">
         <div class="row">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            &copy; <a class="border-bottom" href="#">NMV Comunidad</a>, Derechos Reservados.
-
+            &copy; <a class="border-bottom" href="#">INF-281</a>, Derechos Reservados.
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <div class="footer-menu">
-              <a href="">Home</a>
-              <a href="">Cookies</a>
-              <a href="">Help</a>
-              <a href="">FQAs</a>
-            </div>
+            <a class="desarrollador" onclick="mostrarCorreos()">(click) Para más ayuda comunicate con nosotros</a>
           </div>
         </div>
       </div>
@@ -806,6 +816,16 @@
   <script src="js/scriptPerfil.js"></script>
   <!-- <script src="js/scriptDenunciaUsuario.js"></script> -->
   <!-- <script src="js/scriptEvaluacion.js"></script> -->
+  <script>
+    function mostrarCorreos() {
+      var correos = document.querySelector('.correos');
+      if (correos.style.display == 'block') {
+        correos.style.display = 'none';
+      } else {
+        correos.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 
 </html>
